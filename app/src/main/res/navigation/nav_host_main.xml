@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_host_main"
+    app:startDestination="@id/farmacia_dest">
+
+    <fragment
+        android:id="@+id/farmacia_dest"
+        android:name="com.example.at_fundamentos.fragments.FarmaciaFragment"
+        android:label="fragment_farmacia"
+        tools:layout="@layout/fragment_farmacia" />
+    <fragment
+        android:id="@+id/mercado_dest"
+        android:name="com.example.at_fundamentos.fragments.MercadoFragment"
+        android:label="fragment_mercado"
+        tools:layout="@layout/fragment_mercado" />
+    <fragment
+        android:id="@+id/sacolao_dest"
+        android:name="com.example.at_fundamentos.fragments.SacolaoFragment"
+        android:label="fragment_sacolao"
+        tools:layout="@layout/fragment_sacolao" />
+</navigation>

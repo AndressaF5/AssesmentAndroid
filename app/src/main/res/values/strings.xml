@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">AT_Fundamentos</string>
+    <string name="txtNomeProduto">Nome do Produto</string>
+    <string name="txtPreco">Preço do Produto</string>
+</resources>
