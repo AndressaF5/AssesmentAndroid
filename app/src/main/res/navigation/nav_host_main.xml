@@ -20,4 +20,14 @@
         android:name="com.example.at_fundamentos.fragments.SacolaoFragment"
         android:label="fragment_sacolao"
         tools:layout="@layout/fragment_sacolao" />
+    <fragment
+        android:id="@+id/cadastrarProduto_dest"
+        android:name="com.example.at_fundamentos.fragments.AdicionarProdutoFragment"
+        android:label="fragment_adicionar_produto"
+        tools:layout="@layout/fragment_adicionar_produto" />
+    <fragment
+        android:id="@+id/listaCompras_dest"
+        android:name="com.example.at_fundamentos.fragments.ListaComprasFragment"
+        android:label="fragment_lista_compras"
+        tools:layout="@layout/fragment_lista_compras" />
 </navigation>

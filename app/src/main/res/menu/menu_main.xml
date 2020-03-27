@@ -13,4 +13,12 @@
         android:id="@+id/sacolao_dest"
         android:title="Sacolão" />
 
+    <item
+        android:id="@+id/cadastrarProduto_dest"
+        android:title="Cadastrar Produto" />
+
+    <item
+        android:id="@+id/listaCompras_dest"
+        android:title="Lista de Compras" />
+
 </menu>

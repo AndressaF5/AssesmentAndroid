@@ -9,7 +9,7 @@ import com.example.at_fundamentos.R
 import kotlinx.android.synthetic.main.mercado_recycle.view.*
 
 class MercadoAdapter (
-    private val mercados : List<Mercado>,
+    private val comprasMercados : List<Mercado>,
     private val callback : (Mercado) -> Unit
 ) : RecyclerView.Adapter<MercadoAdapter.MercadoViewHolder>() {
 
@@ -31,7 +31,7 @@ class MercadoAdapter (
         val mercadoViewHolder = MercadoViewHolder(view)
 
         mercadoViewHolder.itemView.setOnClickListener{
-            val mercado = mercados[mercadoViewHolder.adapterPosition]
+            val mercado = comprasMercados[mercadoViewHolder.adapterPosition]
 
             callback(mercado)
         }
@@ -39,10 +39,10 @@ class MercadoAdapter (
         return mercadoViewHolder
     }
 
-    override fun getItemCount(): Int = mercados.size
+    override fun getItemCount(): Int = comprasMercados.size
 
     override fun onBindViewHolder(holder: MercadoViewHolder, position: Int) {
-        val mercado = mercados[position]
+        val mercado = comprasMercados[position]
         holder.txtVwNomeProduto.text = mercado.nomeProduto
         holder.txtVwPreco.text = mercado.precoProduto
     }

@@ -1,4 +1,5 @@
 package com.example.at_fundamentos.Model
 
-class Mercado : Estabelecimento() {
+class Mercado(nomeProduto: String, precoProduto: String) : Estabelecimento(nomeProduto,
+    precoProduto) {
 }

@@ -2,7 +2,12 @@
     <string name="app_name">AT_Fundamentos</string>
     <string name="txtNomeProduto">Nome do Produto</string>
     <string name="txtPreco">Preço do Produto</string>
+    <string name="txtMercado">Mercado</string>
+    <string name="txtFarmacia">Farmácia</string>
+    <string name="txtSacolao">Sacolão</string>
+    <string name="txtCadastroProduto">Cadastrar produtos</string>
+    <string name="txtComercio">Comércio</string>
+    <string name="txtTipoComercio">Mercado, Farmácia ou Sacolão</string>
+    <string name="btnCadastrar">Cadastrar</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

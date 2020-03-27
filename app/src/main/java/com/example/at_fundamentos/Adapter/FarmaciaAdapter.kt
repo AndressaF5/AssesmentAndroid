@@ -9,8 +9,7 @@ import com.example.at_fundamentos.R
 import kotlinx.android.synthetic.main.farmacia_recycle.view.*
 
 class FarmaciaAdapter(
-    private val farmacias : List<Farmacia>,
-    private val callback : (Farmacia) -> Unit
+    private val farmacias : List<Farmacia>
 ) : RecyclerView.Adapter<FarmaciaAdapter.FarmaciaViewHolder>() {
 
     class FarmaciaViewHolder(view: View) : RecyclerView.ViewHolder(view) {
@@ -32,8 +31,6 @@ class FarmaciaAdapter(
 
         farmaciaViewHolder.itemView.setOnClickListener{
             val farmacia = farmacias[farmaciaViewHolder.adapterPosition]
-
-            callback(farmacia)
         }
 
         return farmaciaViewHolder
