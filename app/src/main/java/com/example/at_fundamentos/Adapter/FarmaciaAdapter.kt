@@ -46,5 +46,4 @@ class FarmaciaAdapter(
         holder.txtVwNomeProduto.text = farmacia.nomeProduto
         holder.txtVwPreco.text = farmacia.precoProduto
     }
-
 }

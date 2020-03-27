@@ -2,4 +2,7 @@
     <string name="app_name">AT_Fundamentos</string>
     <string name="txtNomeProduto">Nome do Produto</string>
     <string name="txtPreco">Preço do Produto</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
