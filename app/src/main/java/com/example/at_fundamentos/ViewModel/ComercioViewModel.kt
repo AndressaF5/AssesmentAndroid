@@ -5,6 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModel
+import com.example.at_fundamentos.Model.Estabelecimento
 import com.example.at_fundamentos.Model.Farmacia
 import com.example.at_fundamentos.Model.Mercado
 import com.example.at_fundamentos.Model.Sacolao
@@ -18,6 +19,10 @@ class ComercioViewModel : ViewModel() {
         value = mutableListOf()
     }
     var produtosSacolao = MutableLiveData<MutableList<Sacolao>>().apply {
+        value = mutableListOf()
+    }
+
+    var todosOsProdutos = MutableLiveData<MutableList<Estabelecimento>>().apply{
         value = mutableListOf()
     }
 

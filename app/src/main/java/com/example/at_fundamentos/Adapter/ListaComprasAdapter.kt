@@ -34,9 +34,11 @@ class ListaComprasAdapter ()
 
         val listaComprasViewHolder = ListaComprasViewHolder(view)
 
-        listaComprasViewHolder.itemView.setOnClickListener{
+        /*listaComprasViewHolder.itemView.setOnClickListener{
             var listaCompras = compras[listaComprasViewHolder.adapterPosition]
-        }
+        }*/
+
+        return listaComprasViewHolder
     }
 
     override fun getItemCount(): Int {

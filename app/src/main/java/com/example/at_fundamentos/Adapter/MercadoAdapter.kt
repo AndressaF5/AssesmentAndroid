@@ -9,8 +9,7 @@ import com.example.at_fundamentos.R
 import kotlinx.android.synthetic.main.mercado_recycle.view.*
 
 class MercadoAdapter (
-    private val comprasMercados : List<Mercado>,
-    private val callback : (Mercado) -> Unit
+    private val comprasMercados : MutableList<Mercado>
 ) : RecyclerView.Adapter<MercadoAdapter.MercadoViewHolder>() {
 
     class MercadoViewHolder(view: View) : RecyclerView.ViewHolder(view){
@@ -32,8 +31,6 @@ class MercadoAdapter (
 
         mercadoViewHolder.itemView.setOnClickListener{
             val mercado = comprasMercados[mercadoViewHolder.adapterPosition]
-
-            callback(mercado)
         }
 
         return mercadoViewHolder

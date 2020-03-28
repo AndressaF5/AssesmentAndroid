@@ -9,8 +9,7 @@ import com.example.at_fundamentos.R
 import kotlinx.android.synthetic.main.sacolao_recycle.view.*
 
 class SacolaoAdapter (
-    private val sacoloes : List<Sacolao>,
-    private val callback : (Sacolao) -> Unit
+    private val sacoloes : List<Sacolao>
 ) :RecyclerView.Adapter<SacolaoAdapter.SacolaoViewHolder>() {
 
     class SacolaoViewHolder(view: View) : RecyclerView.ViewHolder(view) {
@@ -32,8 +31,6 @@ class SacolaoAdapter (
 
         sacolaoViewHolder.itemView.setOnClickListener{
             val sacolao = sacoloes[sacolaoViewHolder.adapterPosition]
-
-            callback(sacolao)
         }
 
         return sacolaoViewHolder
