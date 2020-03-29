@@ -38,11 +38,13 @@ class ListaComprasFragment : Fragment() {
         var farmaciaProdutos = comercioViewModel!!.produtosFarmacia
         var sacolaoProdutos = comercioViewModel!!.produtosSacolao
 
-        var todosOsProdutos = mutableListOf(
-            mercadoProdutos,
-            farmaciaProdutos,
-            sacolaoProdutos
-        )
+        comercioViewModel?.apply {
+            todosOsProdutos.addAll(mercadoProdutos)
+            todosOsProdutos.addAll(farmaciaProdutos)
+            todosOsProdutos.addAll(sacolaoProdutos)
+        }
+
+        var todosOsProdutos = comercioViewModel!!.todosOsProdutos
 
         var listaComprasAdapter = ListaComprasAdapter(todosOsProdutos)
 

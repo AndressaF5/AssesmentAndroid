@@ -18,5 +18,5 @@ class ComercioViewModel : ViewModel() {
 
     var produtosSacolao: MutableList<Sacolao> = mutableListOf()
 
-    var todosOsProdutos: MutableList<Estabelecimento> = mutableListOf()
+    var todosOsProdutos = mutableListOf<Estabelecimento>()
 }
