@@ -7,6 +7,7 @@
     tools:context=".fragments.ListaComprasFragment" >
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcyVwListaCompras"
         android:layout_width="409dp"
         android:layout_height="729dp"
         tools:layout_editor_absoluteX="1dp"

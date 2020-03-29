@@ -11,10 +11,12 @@ import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.at_fundamentos.Adapter.MercadoAdapter
+import com.example.at_fundamentos.Model.Estabelecimento
 import com.example.at_fundamentos.Model.Mercado
 
 import com.example.at_fundamentos.R
 import com.example.at_fundamentos.ViewModel.ComercioViewModel
+import kotlinx.android.synthetic.main.fragment_adicionar_produto.*
 import kotlinx.android.synthetic.main.fragment_mercado.*
 
 class MercadoFragment : Fragment() {
@@ -50,9 +52,24 @@ class MercadoFragment : Fragment() {
             ): Boolean = false
 
             override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
-                val position = viewHolder.adapterPosition
+                var comercioViewModel: ComercioViewModel? = null
+                activity?.let {
+                    comercioViewModel = ViewModelProviders.of(it).get(ComercioViewModel::class.java)
+                }
 
+                val position = viewHolder.adapterPosition
+                var todosOsProdutos = comercioViewModel!!.todosOsProdutos.value!!
+
+                todosOsProdutos.add(position, Estabelecimento(
+                    nomeProduto = editTextNomeProduto.text.toString(),
+                    precoProduto = editTextPrecoProduto.text.toString(),
+                    tipoComercio = "Mercado"
+                ))
+
+                mercadoAdapter!!.notifyItemInserted(position)
             }
         })
+
+        itemTouchHelper.attachToRecyclerView(rcyVwMercado)
     }
 }

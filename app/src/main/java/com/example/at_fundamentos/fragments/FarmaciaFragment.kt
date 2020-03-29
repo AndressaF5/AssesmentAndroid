@@ -15,6 +15,7 @@ import com.example.at_fundamentos.Model.Farmacia
 
 import com.example.at_fundamentos.R
 import com.example.at_fundamentos.ViewModel.ComercioViewModel
+import kotlinx.android.synthetic.main.fragment_adicionar_produto.*
 import kotlinx.android.synthetic.main.fragment_farmacia.*
 import kotlinx.android.synthetic.main.fragment_mercado.*
 
@@ -61,9 +62,18 @@ class FarmaciaFragment : Fragment() {
 
                 val position = viewHolder.adapterPosition
 
-                comercioViewModel!!.todosOsProdutos.value!!.add(position)
+                var todosOsProdutos =  comercioViewModel!!.todosOsProdutos.value!!
 
+                todosOsProdutos.add(position, Estabelecimento(
+                    nomeProduto = editTextNomeProduto.text.toString(),
+                    precoProduto = editTextPrecoProduto.text.toString(),
+                    tipoComercio = "Farmácia"
+                ))
+
+                farmaciaAdapter.notifyItemInserted(position)
             }
         })
+
+        itemTouchHelper.attachToRecyclerView(rcyVwFarmacia)
     }
 }
