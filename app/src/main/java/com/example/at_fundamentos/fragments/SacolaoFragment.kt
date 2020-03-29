@@ -9,6 +9,7 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.at_fundamentos.Adapter.ListaComprasAdapter
 import com.example.at_fundamentos.Adapter.SacolaoAdapter
 import com.example.at_fundamentos.Model.Estabelecimento
 import com.example.at_fundamentos.Model.Sacolao
@@ -16,6 +17,7 @@ import com.example.at_fundamentos.Model.Sacolao
 import com.example.at_fundamentos.R
 import com.example.at_fundamentos.ViewModel.ComercioViewModel
 import kotlinx.android.synthetic.main.fragment_adicionar_produto.*
+import kotlinx.android.synthetic.main.fragment_lista_compras.*
 import kotlinx.android.synthetic.main.fragment_sacolao.*
 
 class SacolaoFragment : Fragment() {
@@ -60,18 +62,22 @@ class SacolaoFragment : Fragment() {
                 }
 
                 val position = viewHolder.adapterPosition
-                var todosOsProdutos = comercioViewModel!!.todosOsProdutos.value!!
+                var todosOsProdutos = comercioViewModel!!.todosOsProdutos
 
                 todosOsProdutos.add(position, Estabelecimento(
                     nomeProduto = editTextNomeProduto.text.toString(),
                     precoProduto = editTextPrecoProduto.text.toString()
                 ))
 
-                sacolaoAdapter.notifyItemInserted(position)
+                var listaComprasAdapter = ListaComprasAdapter(todosOsProdutos)
+                rcyVwListaCompras.adapter = listaComprasAdapter
+                rcyVwListaCompras.layoutManager = LinearLayoutManager(context)
+
+                listaComprasAdapter.notifyItemInserted(position)
             }
         })
 
-        itemTouchHelper.attachToRecyclerView(rcyVwSacolao)
+        itemTouchHelper.attachToRecyclerView(rcyVwListaCompras)
 
     }
 }

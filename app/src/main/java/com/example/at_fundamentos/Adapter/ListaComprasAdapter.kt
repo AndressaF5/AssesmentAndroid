@@ -3,14 +3,12 @@ package com.example.at_fundamentos.Adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.lifecycle.MutableLiveData
 import androidx.recyclerview.widget.RecyclerView
 import com.example.at_fundamentos.Model.Estabelecimento
 import com.example.at_fundamentos.R
-import com.example.at_fundamentos.ViewModel.ComercioViewModel
 import kotlinx.android.synthetic.main.lista_compras_recycle.view.*
 
-class ListaComprasAdapter (todosOsProdutos: MutableList<MutableLiveData<out MutableList<out Estabelecimento>>>)
+class ListaComprasAdapter(todosOsProdutos: MutableList<Estabelecimento>)
     : RecyclerView.Adapter<ListaComprasAdapter.ListaComprasViewHolder>() {
 
     class ListaComprasViewHolder(view: View) : RecyclerView.ViewHolder(view) {

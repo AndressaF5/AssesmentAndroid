@@ -5,18 +5,18 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.LinearLayout
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.at_fundamentos.Adapter.ListaComprasAdapter
 import com.example.at_fundamentos.Adapter.MercadoAdapter
 import com.example.at_fundamentos.Model.Estabelecimento
-import com.example.at_fundamentos.Model.Mercado
 
 import com.example.at_fundamentos.R
 import com.example.at_fundamentos.ViewModel.ComercioViewModel
 import kotlinx.android.synthetic.main.fragment_adicionar_produto.*
+import kotlinx.android.synthetic.main.fragment_lista_compras.*
 import kotlinx.android.synthetic.main.fragment_mercado.*
 
 class MercadoFragment : Fragment() {
@@ -58,7 +58,7 @@ class MercadoFragment : Fragment() {
                 }
 
                 val position = viewHolder.adapterPosition
-                var todosOsProdutos = comercioViewModel!!.todosOsProdutos.value!!
+                var todosOsProdutos = comercioViewModel!!.todosOsProdutos
 
                 todosOsProdutos.add(position, Estabelecimento(
                     nomeProduto = editTextNomeProduto.text.toString(),
@@ -66,10 +66,15 @@ class MercadoFragment : Fragment() {
                     tipoComercio = "Mercado"
                 ))
 
-                mercadoAdapter!!.notifyItemInserted(position)
+                var listaComprasAdapter = ListaComprasAdapter(todosOsProdutos)
+                rcyVwListaCompras.adapter = listaComprasAdapter
+                rcyVwListaCompras.layoutManager = LinearLayoutManager(context)
+
+                listaComprasAdapter.notifyItemInserted(position)
+
             }
         })
 
-        itemTouchHelper.attachToRecyclerView(rcyVwMercado)
+        itemTouchHelper.attachToRecyclerView(rcyVwListaCompras)
     }
 }

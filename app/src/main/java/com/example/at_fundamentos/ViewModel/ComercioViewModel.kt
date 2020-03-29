@@ -12,25 +12,11 @@ import com.example.at_fundamentos.Model.Sacolao
 
 class ComercioViewModel : ViewModel() {
 
-    var produtosMercado = MutableLiveData<MutableList<Mercado>>().apply {
-        value = mutableListOf()
-    }
-    var produtosFarmacia = MutableLiveData<MutableList<Farmacia>>().apply {
-        value = mutableListOf()
-    }
-    var produtosSacolao = MutableLiveData<MutableList<Sacolao>>().apply {
-        value = mutableListOf()
-    }
+    var produtosMercado: MutableList<Mercado> = mutableListOf()
 
-    var todosOsProdutos = MutableLiveData<MutableList<Estabelecimento>>().apply{
-        value = mutableListOf()
-    }
+    var produtosFarmacia: MutableList<Farmacia> = mutableListOf()
 
-    // fazer lista de com todos os estabelecimentos e chamar em cada fragment do estabelecimento
+    var produtosSacolao: MutableList<Sacolao> = mutableListOf()
 
-    //fun observar(){
-    //    comercioViewModel.produtosAlgumaCoisa.observe(context, Observer{
-    //        Toast....
-    //    })
-    //}
+    var todosOsProdutos: MutableList<Estabelecimento> = mutableListOf()
 }
