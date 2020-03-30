@@ -16,6 +16,7 @@ import com.example.at_fundamentos.Model.Farmacia
 
 import com.example.at_fundamentos.R
 import com.example.at_fundamentos.ViewModel.ComercioViewModel
+import kotlinx.android.synthetic.main.farmacia_recycle.*
 import kotlinx.android.synthetic.main.fragment_adicionar_produto.*
 import kotlinx.android.synthetic.main.fragment_farmacia.*
 import kotlinx.android.synthetic.main.fragment_lista_compras.*
@@ -68,9 +69,8 @@ class FarmaciaFragment : Fragment() {
                 var todosOsProdutos =  comercioViewModel!!.todosOsProdutos
 
                 todosOsProdutos.add(position, Estabelecimento(
-                    nomeProduto = editTextNomeProduto.text.toString(),
-                    precoProduto = editTextPrecoProduto.text.toString(),
-                    tipoComercio = "Farmácia"
+                    nomeProduto = txtVwNomeProduto.text.toString(),
+                    precoProduto = txtVwPreco.text.toString()
                 ))
 
                 var listaComprasAdapter = ListaComprasAdapter(todosOsProdutos)

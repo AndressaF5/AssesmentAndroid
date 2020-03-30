@@ -19,6 +19,7 @@ import com.example.at_fundamentos.ViewModel.ComercioViewModel
 import kotlinx.android.synthetic.main.fragment_adicionar_produto.*
 import kotlinx.android.synthetic.main.fragment_lista_compras.*
 import kotlinx.android.synthetic.main.fragment_mercado.*
+import kotlinx.android.synthetic.main.mercado_recycle.*
 
 class MercadoFragment : Fragment() {
 
@@ -65,8 +66,8 @@ class MercadoFragment : Fragment() {
                 var todosOsProdutos = comercioViewModel!!.todosOsProdutos
 
                 todosOsProdutos.add(position, Estabelecimento(
-                    nomeProduto = editTextNomeProduto.text.toString(),
-                    precoProduto = editTextPrecoProduto.text.toString(),
+                    nomeProduto = txtVwNomeProduto.text.toString(),
+                    precoProduto = txtVwPreco.text.toString(),
                     tipoComercio = "Mercado"
                 ))
 

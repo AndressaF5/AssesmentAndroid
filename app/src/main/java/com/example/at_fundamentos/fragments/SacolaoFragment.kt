@@ -19,6 +19,7 @@ import com.example.at_fundamentos.ViewModel.ComercioViewModel
 import kotlinx.android.synthetic.main.fragment_adicionar_produto.*
 import kotlinx.android.synthetic.main.fragment_lista_compras.*
 import kotlinx.android.synthetic.main.fragment_sacolao.*
+import kotlinx.android.synthetic.main.sacolao_recycle.*
 
 class SacolaoFragment : Fragment() {
 
@@ -65,8 +66,8 @@ class SacolaoFragment : Fragment() {
                 var todosOsProdutos = comercioViewModel!!.todosOsProdutos
 
                 todosOsProdutos.add(position, Estabelecimento(
-                    nomeProduto = editTextNomeProduto.text.toString(),
-                    precoProduto = editTextPrecoProduto.text.toString()
+                    nomeProduto = txtVwNomeProduto.text.toString(),
+                    precoProduto = txtVwPreco.text.toString()
                 ))
 
                 var listaComprasAdapter = ListaComprasAdapter(todosOsProdutos)
