@@ -68,7 +68,7 @@ class FarmaciaFragment : Fragment() {
 
                 var todosOsProdutos =  comercioViewModel!!.todosOsProdutos
 
-                todosOsProdutos.add(position, Estabelecimento(
+                todosOsProdutos.add(Estabelecimento(
                     nomeProduto = txtVwNomeProduto.text.toString(),
                     precoProduto = txtVwPreco.text.toString()
                 ))
