@@ -77,8 +77,7 @@ class SacolaoFragment : Fragment() {
                 listaComprasAdapter.notifyItemInserted(position)
             }
         })
-
+        itemTouchHelper.attachToRecyclerView(rcyVwSacolao)
         itemTouchHelper.attachToRecyclerView(rcyVwListaCompras)
-
     }
 }
