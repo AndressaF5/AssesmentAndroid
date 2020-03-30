@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.at_fundamentos.Adapter.ListaComprasAdapter
 import com.example.at_fundamentos.Adapter.MercadoAdapter
 import com.example.at_fundamentos.Model.Estabelecimento
+import com.example.at_fundamentos.Model.Mercado
 
 import com.example.at_fundamentos.R
 import com.example.at_fundamentos.ViewModel.ComercioViewModel
@@ -32,12 +33,15 @@ class MercadoFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        var mercadoViewModel: ComercioViewModel? = null
-        activity?.let {
-            mercadoViewModel = ViewModelProviders.of(it).get(ComercioViewModel::class.java)
-        }
+        var comprasMercado = mutableListOf(
+            Mercado("Arroz", "13.00"),
+            Mercado("Feijão", "4.99"),
+            Mercado("Açúcar", "2.50"),
+            Mercado("Sal", "1.99"),
+            Mercado("Café", "8.99")
+        )
 
-        var mercadoAdapter = mercadoViewModel!!.produtosMercado.value?.let { MercadoAdapter(it) }
+        var mercadoAdapter = MercadoAdapter(comprasMercado)
 
         rcyVwMercado.adapter = mercadoAdapter
         rcyVwMercado.layoutManager = LinearLayoutManager(context)

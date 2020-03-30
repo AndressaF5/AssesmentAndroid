@@ -34,16 +34,6 @@ class ListaComprasFragment : Fragment() {
             comercioViewModel = ViewModelProviders.of(it).get(ComercioViewModel::class.java)
         }
 
-        var mercadoProdutos = comercioViewModel!!.produtosMercado
-        var farmaciaProdutos = comercioViewModel!!.produtosFarmacia
-        var sacolaoProdutos = comercioViewModel!!.produtosSacolao
-
-        comercioViewModel?.apply {
-            todosOsProdutos.addAll(mercadoProdutos)
-            todosOsProdutos.addAll(farmaciaProdutos)
-            todosOsProdutos.addAll(sacolaoProdutos)
-        }
-
         var todosOsProdutos = comercioViewModel!!.todosOsProdutos
 
         var listaComprasAdapter = ListaComprasAdapter(todosOsProdutos)

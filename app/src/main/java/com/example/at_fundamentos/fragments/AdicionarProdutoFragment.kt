@@ -51,25 +51,19 @@ class AdicionarProdutoFragment : Fragment() {
         //var txtNomeProduto = editTextNomeProduto.text.toString()
         //var txtPrecoProduto = editTextPrecoProduto.text.toString()
 
-        var mercadoViewModel: ComercioViewModel? = null
+        var comercioViewModel: ComercioViewModel? = null
         activity?.let{
-            mercadoViewModel = ViewModelProviders.of(it).get(ComercioViewModel::class.java)
+            comercioViewModel = ViewModelProviders.of(it).get(ComercioViewModel::class.java)
         }
 
         if (tipo == "Mercado" || tipo == "mercado"){
-            //mercadoViewModel!!.produtosMercado.value!!.add(Mercado(txtNomeProduto, txtPrecoProduto))
-            //mostrarToast()
-            mercadoViewModel!!.produtosMercado.value?.let { notifyRecycleMercado(it) }
+            notifyRecycleMercado(comercioViewModel!!.produtosMercado)
 
         }else if (tipo == "Farmacia" || tipo == "farmacia"){
-            //mercadoViewModel!!.produtosFarmacia.value!!.add(Farmacia(txtNomeProduto, txtPrecoProduto))
-            //mostrarToast()
-            mercadoViewModel!!.produtosFarmacia.value?.let { notifyRecycleFarmacia(it) }
+            notifyRecycleFarmacia(comercioViewModel!!.produtosFarmacia)
 
         }else{
-            //mercadoViewModel!!.produtosSacolao.value!!.add(Sacolao(txtNomeProduto, txtPrecoProduto))
-            //mostrarToast()
-            mercadoViewModel!!.produtosSacolao.value?.let { notifyRecycleSacolao(it) }
+            notifyRecycleSacolao(comercioViewModel!!.produtosSacolao)
         }
     }
 
@@ -77,7 +71,7 @@ class AdicionarProdutoFragment : Fragment() {
 
         Toast.makeText(
             activity?.baseContext,
-            "Usuário inválido!",
+            "Produto cadastrado com sucesso!",
             Toast.LENGTH_LONG
         ).show()
     }
@@ -92,13 +86,13 @@ class AdicionarProdutoFragment : Fragment() {
             mercadoViewModel = ViewModelProviders.of(it).get(ComercioViewModel::class.java)
         }
 
-        var mercadoAdapter = mercadoViewModel!!.produtosMercado.value?.let { MercadoAdapter(it) }
+        var mercadoAdapter = MercadoAdapter(comprasMercado)
 
         rcyVwMercado.adapter = mercadoAdapter
         rcyVwMercado.layoutManager = LinearLayoutManager(context)
 
         comprasMercado.add(Mercado(txtNomeProduto, txtPrecoProduto))
-        mercadoAdapter!!.notifyItemInserted(comprasMercado.lastIndex)
+        mercadoAdapter.notifyItemInserted(comprasMercado.lastIndex)
         mostrarToast()
     }
 
@@ -112,13 +106,13 @@ class AdicionarProdutoFragment : Fragment() {
             farmaciaViewModel = ViewModelProviders.of(it).get(ComercioViewModel::class.java)
         }
 
-        var farmaciaAdapter = farmaciaViewModel!!.produtosFarmacia.value?.let { FarmaciaAdapter(it) }
+        var farmaciaAdapter = FarmaciaAdapter(comprasFarmacia)
 
         rcyVwFarmacia.adapter = farmaciaAdapter
         rcyVwFarmacia.layoutManager = LinearLayoutManager(context)
 
         comprasFarmacia.add(Farmacia(txtNomeProduto, txtPrecoProduto))
-        farmaciaAdapter!!.notifyItemInserted(comprasFarmacia.lastIndex)
+        farmaciaAdapter.notifyItemInserted(comprasFarmacia.lastIndex)
         mostrarToast()
     }
 
@@ -132,13 +126,13 @@ class AdicionarProdutoFragment : Fragment() {
             sacolaoViewModel = ViewModelProviders.of(it).get(ComercioViewModel::class.java)
         }
 
-        var sacolaoAdapter = sacolaoViewModel!!.produtosSacolao.value?.let { SacolaoAdapter(it) }
+        var sacolaoAdapter = SacolaoAdapter(comprasSacolao)
 
         rcyVwSacolao.adapter = sacolaoAdapter
         rcyVwSacolao.layoutManager = LinearLayoutManager(context)
 
         comprasSacolao.add(Sacolao(txtNomeProduto, txtPrecoProduto))
-        sacolaoAdapter!!.notifyItemInserted(comprasSacolao.lastIndex)
+        sacolaoAdapter.notifyItemInserted(comprasSacolao.lastIndex)
         mostrarToast()
     }
 }
