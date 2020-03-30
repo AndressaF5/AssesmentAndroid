@@ -79,7 +79,6 @@ class MercadoFragment : Fragment() {
 
             }
         })
-
         itemTouchHelper.attachToRecyclerView(rcyVwListaCompras)
     }
 }

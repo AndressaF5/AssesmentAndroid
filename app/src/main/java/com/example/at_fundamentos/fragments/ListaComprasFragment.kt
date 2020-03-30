@@ -15,6 +15,7 @@ import com.example.at_fundamentos.Model.Estabelecimento
 import com.example.at_fundamentos.R
 import com.example.at_fundamentos.ViewModel.ComercioViewModel
 import kotlinx.android.synthetic.main.fragment_lista_compras.*
+import kotlinx.android.synthetic.main.fragment_sacolao.*
 
 class ListaComprasFragment : Fragment() {
 

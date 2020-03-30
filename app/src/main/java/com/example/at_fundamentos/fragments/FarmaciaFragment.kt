@@ -81,8 +81,6 @@ class FarmaciaFragment : Fragment() {
 
             }
         })
-
-        itemTouchHelper.attachToRecyclerView(rcyVwFarmacia)
         itemTouchHelper.attachToRecyclerView(rcyVwListaCompras)
     }
 }
