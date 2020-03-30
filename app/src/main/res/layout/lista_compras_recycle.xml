@@ -18,85 +18,23 @@
             android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/txtMercado"
+            android:text="@string/txtListaCompras"
+            android:gravity="center"
             android:textColor="@color/colorBlack"
             android:textSize="24sp" />
 
         <TextView
-            android:id="@+id/txtVwNomeProdutoMercado"
+            android:id="@+id/txtVwNomeProduto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/txtNomeProduto"
             android:textSize="18sp" />
 
         <TextView
-            android:id="@+id/txtVwPrecoProdutoMercado"
+            android:id="@+id/txtVwPrecoProduto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/txtPreco"
-            android:textSize="18sp" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/linearLayout2"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintEnd_toStartOf="@+id/guideline8"
-        app:layout_constraintStart_toStartOf="@+id/guideline7"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/txtFarmacia"
-            android:textColor="@color/colorBlack"
-            android:textSize="24sp" />
-
-        <TextView
-            android:id="@+id/txtVwNomeProdutoFarmacia"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/txtNomeProduto"
-            android:textSize="18sp" />
-
-        <TextView
-            android:id="@+id/txtVwPrecoProdutoFarmacia"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/txtPreco"
-            android:textSize="18sp" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintEnd_toStartOf="@+id/guideline8"
-        app:layout_constraintStart_toStartOf="@+id/guideline7"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/txtSacolao"
-            android:textColor="@color/colorBlack"
-            android:textSize="24sp" />
-
-        <TextView
-            android:id="@+id/txtVwNomeProdutoSacolao"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/txtNomeProduto"
-            android:textSize="18sp" />
-
-        <TextView
-            android:id="@+id/txtVwPrecoProdutoSacolao"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/txtPreco"
             android:textSize="18sp" />
 
     </LinearLayout>

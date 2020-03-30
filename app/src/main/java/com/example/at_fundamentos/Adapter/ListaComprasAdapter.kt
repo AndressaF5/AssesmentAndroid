@@ -8,18 +8,12 @@ import com.example.at_fundamentos.Model.Estabelecimento
 import com.example.at_fundamentos.R
 import kotlinx.android.synthetic.main.lista_compras_recycle.view.*
 
-class ListaComprasAdapter(todosOsProdutos: MutableList<Estabelecimento>)
+class ListaComprasAdapter(var todosOsProdutos: MutableList<Estabelecimento>)
     : RecyclerView.Adapter<ListaComprasAdapter.ListaComprasViewHolder>() {
 
     class ListaComprasViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        var campoTxtNomeProdutoMercado = view.txtVwNomeProdutoMercado
-        var campoTxtPrecoProdutoMercado = view.txtVwPrecoProdutoMercado
-
-        var campoTxtNomeProdutoFarmacia = view.txtVwNomeProdutoFarmacia
-        var campoTxtPrecoProdutoFarmacia = view.txtVwPrecoProdutoFarmacia
-
-        var campoTxtNomeProdutoSacolao = view.txtVwNomeProdutoSacolao
-        var campoTxtPrecoProdutoSacolao = view.txtVwPrecoProdutoSacolao
+        var campoTxtNomeProduto = view.txtVwNomeProduto
+        var campoTxtPreco = view.txtVwPrecoProduto
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListaComprasViewHolder {
@@ -34,18 +28,14 @@ class ListaComprasAdapter(todosOsProdutos: MutableList<Estabelecimento>)
 
         val listaComprasViewHolder = ListaComprasViewHolder(view)
 
-        /*listaComprasViewHolder.itemView.setOnClickListener{
-            var listaCompras = compras[listaComprasViewHolder.adapterPosition]
-        }*/
-
         return listaComprasViewHolder
     }
 
-    override fun getItemCount(): Int {
-        TODO("Not yet implemented")
-    }
+    override fun getItemCount(): Int = todosOsProdutos.size
 
     override fun onBindViewHolder(holder: ListaComprasViewHolder, position: Int) {
-        TODO("Not yet implemented")
+        val produtos = todosOsProdutos[position]
+        holder.campoTxtNomeProduto.text = produtos.nomeProduto
+        holder.campoTxtPreco.text = produtos.precoProduto
     }
 }
