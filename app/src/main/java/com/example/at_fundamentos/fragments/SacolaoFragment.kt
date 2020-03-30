@@ -62,7 +62,7 @@ class SacolaoFragment : Fragment() {
                     comercioViewModel = ViewModelProviders.of(it).get(ComercioViewModel::class.java)
                 }
 
-                val position = viewHolder.adapterPosition
+                //val position = viewHolder.adapterPosition
                 var todosOsProdutos = comercioViewModel!!.todosOsProdutos
 
                 todosOsProdutos.add(Estabelecimento(
@@ -74,7 +74,7 @@ class SacolaoFragment : Fragment() {
                 rcyVwListaCompras.adapter = listaComprasAdapter
                 rcyVwListaCompras.layoutManager = LinearLayoutManager(context)
 
-                listaComprasAdapter.notifyItemInserted(position)
+                listaComprasAdapter.notifyItemInserted(todosOsProdutos.lastIndex)
             }
         })
         itemTouchHelper.attachToRecyclerView(rcyVwListaCompras)

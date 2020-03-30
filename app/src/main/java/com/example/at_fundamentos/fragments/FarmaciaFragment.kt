@@ -64,7 +64,7 @@ class FarmaciaFragment : Fragment() {
                     comercioViewModel = ViewModelProviders.of(it).get(ComercioViewModel::class.java)
                 }
 
-                val position = viewHolder.adapterPosition
+                //val position = viewHolder.adapterPosition
 
                 var todosOsProdutos =  comercioViewModel!!.todosOsProdutos
 
@@ -77,7 +77,7 @@ class FarmaciaFragment : Fragment() {
                 rcyVwListaCompras.adapter = listaComprasAdapter
                 rcyVwListaCompras.layoutManager = LinearLayoutManager(context)
 
-                listaComprasAdapter.notifyItemInserted(position)
+                listaComprasAdapter.notifyItemInserted(todosOsProdutos.lastIndex)
 
             }
         })
