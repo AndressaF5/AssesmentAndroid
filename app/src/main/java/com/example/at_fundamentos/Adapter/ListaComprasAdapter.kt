@@ -8,7 +8,7 @@ import com.example.at_fundamentos.Model.Estabelecimento
 import com.example.at_fundamentos.R
 import kotlinx.android.synthetic.main.lista_compras_recycle.view.*
 
-class ListaComprasAdapter(var todosOsProdutos: MutableList<Estabelecimento>)
+class ListaComprasAdapter(var todosOsProdutos: MutableList<Estabelecimento>?)
     : RecyclerView.Adapter<ListaComprasAdapter.ListaComprasViewHolder>() {
 
     class ListaComprasViewHolder(view: View) : RecyclerView.ViewHolder(view) {
@@ -31,11 +31,11 @@ class ListaComprasAdapter(var todosOsProdutos: MutableList<Estabelecimento>)
         return listaComprasViewHolder
     }
 
-    override fun getItemCount(): Int = todosOsProdutos.size
+    override fun getItemCount(): Int = todosOsProdutos!!.size
 
     override fun onBindViewHolder(holder: ListaComprasViewHolder, position: Int) {
-        val produtos = todosOsProdutos[position]
-        holder.campoTxtNomeProduto.text = produtos.nomeProduto
+        val produtos = todosOsProdutos?.get(position)
+        holder.campoTxtNomeProduto.text = produtos!!.nomeProduto
         holder.campoTxtPreco.text = produtos.precoProduto
     }
 }

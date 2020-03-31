@@ -5,17 +5,17 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.LifecycleOwner
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.at_fundamentos.Adapter.ListaComprasAdapter
-import com.example.at_fundamentos.Model.Estabelecimento
 
 import com.example.at_fundamentos.R
 import com.example.at_fundamentos.ViewModel.ComercioViewModel
 import kotlinx.android.synthetic.main.fragment_lista_compras.*
-import kotlinx.android.synthetic.main.fragment_sacolao.*
 
 class ListaComprasFragment : Fragment() {
 
@@ -37,10 +37,16 @@ class ListaComprasFragment : Fragment() {
 
         var todosOsProdutos = comercioViewModel!!.todosOsProdutos
 
-        var listaComprasAdapter = ListaComprasAdapter(todosOsProdutos)
+        var listaComprasAdapter = ListaComprasAdapter(todosOsProdutos.value)
 
         rcyVwListaCompras.adapter = listaComprasAdapter
         rcyVwListaCompras.layoutManager = LinearLayoutManager(context)
+
+        todosOsProdutos.observe(viewLifecycleOwner, Observer {
+            if(isAdded){
+                listaComprasAdapter.notifyItemInserted(todosOsProdutos.value!!.lastIndex)
+            }
+        })
 
         val itemTouchHelper = ItemTouchHelper(object : ItemTouchHelper.SimpleCallback(
             0, ItemTouchHelper.LEFT
@@ -58,12 +64,11 @@ class ListaComprasFragment : Fragment() {
                 }
 
                 val position = viewHolder.adapterPosition
-                todosOsProdutos.removeAt(position)
+                todosOsProdutos.value!!.removeAt(position)
                 listaComprasAdapter.notifyItemRemoved(position)
             }
         })
 
         itemTouchHelper.attachToRecyclerView(rcyVwListaCompras)
     }
-
 }

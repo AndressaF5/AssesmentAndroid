@@ -16,7 +16,6 @@ import com.example.at_fundamentos.Model.Mercado
 
 import com.example.at_fundamentos.R
 import com.example.at_fundamentos.ViewModel.ComercioViewModel
-import kotlinx.android.synthetic.main.fragment_adicionar_produto.*
 import kotlinx.android.synthetic.main.fragment_lista_compras.*
 import kotlinx.android.synthetic.main.fragment_mercado.*
 import kotlinx.android.synthetic.main.mercado_recycle.*
@@ -47,9 +46,9 @@ class MercadoFragment : Fragment() {
         rcyVwMercado.adapter = mercadoAdapter
         rcyVwMercado.layoutManager = LinearLayoutManager(context)
 
-        val itemTouchHelper = ItemTouchHelper(object: ItemTouchHelper.SimpleCallback(
+        val itemTouchHelper = ItemTouchHelper(object : ItemTouchHelper.SimpleCallback(
             0, ItemTouchHelper.RIGHT
-        ){
+        ) {
             override fun onMove(
                 recyclerView: RecyclerView,
                 viewHolder: RecyclerView.ViewHolder,
@@ -62,23 +61,15 @@ class MercadoFragment : Fragment() {
                     comercioViewModel = ViewModelProviders.of(it).get(ComercioViewModel::class.java)
                 }
 
-                //val position = viewHolder.adapterPosition
-                var todosOsProdutos = comercioViewModel!!.todosOsProdutos
+                var position = viewHolder.adapterPosition
+                var todosOsProdutos = comercioViewModel!!.todosOsProdutos.value
 
-                todosOsProdutos.add(Estabelecimento(
+                todosOsProdutos!!.add(Estabelecimento(
                     nomeProduto = txtVwNomeProduto.text.toString(),
-                    precoProduto = txtVwPreco.text.toString(),
-                    tipoComercio = "Mercado"
+                    precoProduto = txtVwPreco.text.toString()
                 ))
-
-                var listaComprasAdapter = ListaComprasAdapter(todosOsProdutos)
-                rcyVwListaCompras.adapter = listaComprasAdapter
-                rcyVwListaCompras.layoutManager = LinearLayoutManager(context)
-
-                listaComprasAdapter.notifyItemInserted(todosOsProdutos.lastIndex)
-
             }
         })
-        itemTouchHelper.attachToRecyclerView(rcyVwListaCompras)
     }
 }
+
