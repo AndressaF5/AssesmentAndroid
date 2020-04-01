@@ -20,12 +20,14 @@
         app:navGraph="@navigation/nav_host_main" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavHost"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="78dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fragment"
+        app:layout_constraintTop_toTopOf="@+id/fragment"
+        app:layout_constraintVertical_bias="1.0"
         app:menu="@menu/menu_main" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

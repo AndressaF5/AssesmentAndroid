@@ -17,6 +17,7 @@ import com.example.at_fundamentos.R
 import com.example.at_fundamentos.ViewModel.ComercioViewModel
 import kotlinx.android.synthetic.main.farmacia_recycle.*
 import kotlinx.android.synthetic.main.fragment_farmacia.*
+import kotlinx.android.synthetic.main.fragment_lista_compras.*
 
 class FarmaciaFragment : Fragment() {
     override fun onCreateView(
@@ -65,11 +66,9 @@ class FarmaciaFragment : Fragment() {
 
                 var todosOsProdutos =  comercioViewModel!!.todosOsProdutos.value
 
-                todosOsProdutos!!.add(Estabelecimento(
-                    nomeProduto = txtVwNomeProduto.text.toString(),
-                    precoProduto = txtVwPreco.text.toString()
-                ))
+                todosOsProdutos!!.add(comercioViewModel!!.produtosFarmacia[viewHolder.adapterPosition])
             }
         })
+        itemTouchHelper.attachToRecyclerView(rcyVwListaCompras)
     }
 }

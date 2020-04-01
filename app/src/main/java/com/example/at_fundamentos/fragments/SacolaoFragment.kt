@@ -15,6 +15,7 @@ import com.example.at_fundamentos.Model.Sacolao
 
 import com.example.at_fundamentos.R
 import com.example.at_fundamentos.ViewModel.ComercioViewModel
+import kotlinx.android.synthetic.main.fragment_lista_compras.*
 import kotlinx.android.synthetic.main.fragment_sacolao.*
 import kotlinx.android.synthetic.main.sacolao_recycle.*
 
@@ -62,11 +63,9 @@ class SacolaoFragment : Fragment() {
                 //val position = viewHolder.adapterPosition
                 var todosOsProdutos = comercioViewModel!!.todosOsProdutos.value
 
-                todosOsProdutos!!.add(Estabelecimento(
-                    nomeProduto = txtVwNomeProduto.text.toString(),
-                    precoProduto = txtVwPreco.text.toString()
-                ))
+                todosOsProdutos!!.add(comercioViewModel!!.produtosSacolao[viewHolder.adapterPosition])
             }
         })
+        itemTouchHelper.attachToRecyclerView(rcyVwListaCompras)
     }
 }

@@ -65,11 +65,9 @@ class MercadoFragment : Fragment() {
                 var position = viewHolder.adapterPosition
                 var todosOsProdutos = comercioViewModel!!.todosOsProdutos.value
 
-                todosOsProdutos!!.add(Estabelecimento(
-                    nomeProduto = txtVwNomeProduto.text.toString(),
-                    precoProduto = txtVwPreco.text.toString()
-                ))
+                todosOsProdutos!!.add(comercioViewModel!!.produtosMercado[viewHolder.adapterPosition])
             }
         })
+        itemTouchHelper.attachToRecyclerView(rcyVwListaCompras)
     }
 }
