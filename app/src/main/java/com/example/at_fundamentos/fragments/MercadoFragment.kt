@@ -9,17 +9,10 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.at_fundamentos.Adapter.ListaComprasAdapter
 import com.example.at_fundamentos.Adapter.MercadoAdapter
-import com.example.at_fundamentos.Model.Estabelecimento
-import com.example.at_fundamentos.Model.Mercado
-
 import com.example.at_fundamentos.R
 import com.example.at_fundamentos.ViewModel.ComercioViewModel
-import kotlinx.android.synthetic.main.fragment_lista_compras.*
 import kotlinx.android.synthetic.main.fragment_mercado.*
-import kotlinx.android.synthetic.main.mercado_recycle.*
-import kotlinx.android.synthetic.main.mercado_recycle.view.*
 
 class MercadoFragment : Fragment() {
 

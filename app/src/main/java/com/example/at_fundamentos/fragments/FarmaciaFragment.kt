@@ -10,15 +10,9 @@ import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.at_fundamentos.Adapter.FarmaciaAdapter
-import com.example.at_fundamentos.Model.Estabelecimento
-import com.example.at_fundamentos.Model.Farmacia
-
 import com.example.at_fundamentos.R
 import com.example.at_fundamentos.ViewModel.ComercioViewModel
-import kotlinx.android.synthetic.main.farmacia_recycle.*
 import kotlinx.android.synthetic.main.fragment_farmacia.*
-import kotlinx.android.synthetic.main.fragment_lista_compras.*
-import kotlinx.android.synthetic.main.fragment_sacolao.*
 
 class FarmaciaFragment : Fragment() {
     override fun onCreateView(
@@ -65,6 +59,6 @@ class FarmaciaFragment : Fragment() {
                 todosOsProdutos!!.add(comercioViewModel!!.produtosFarmacia[viewHolder.adapterPosition])
             }
         })
-        itemTouchHelper.attachToRecyclerView(rcyVwSacolao)
+        itemTouchHelper.attachToRecyclerView(rcyVwFarmacia)
     }
 }

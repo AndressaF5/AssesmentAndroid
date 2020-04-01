@@ -10,14 +10,9 @@ import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.at_fundamentos.Adapter.SacolaoAdapter
-import com.example.at_fundamentos.Model.Estabelecimento
-import com.example.at_fundamentos.Model.Sacolao
-
 import com.example.at_fundamentos.R
 import com.example.at_fundamentos.ViewModel.ComercioViewModel
-import kotlinx.android.synthetic.main.fragment_lista_compras.*
 import kotlinx.android.synthetic.main.fragment_sacolao.*
-import kotlinx.android.synthetic.main.sacolao_recycle.*
 
 class SacolaoFragment : Fragment() {
 

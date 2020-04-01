@@ -12,7 +12,6 @@ import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.at_fundamentos.Adapter.ListaComprasAdapter
-
 import com.example.at_fundamentos.R
 import com.example.at_fundamentos.ViewModel.ComercioViewModel
 import kotlinx.android.synthetic.main.fragment_lista_compras.*
