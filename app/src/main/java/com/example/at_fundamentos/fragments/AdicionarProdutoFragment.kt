@@ -43,10 +43,11 @@ class AdicionarProdutoFragment : Fragment() {
 
         btnCadastrar.setOnClickListener{
             verificarComercio(editTextTipoComercio.text.toString())
+            mostrarToast()
         }
     }
 
-    fun verificarComercio(tipo: String) {
+    private fun verificarComercio(tipo: String) {
 
         var txtNomeProduto = editTextNomeProduto.text.toString()
         var txtPrecoProduto = editTextPrecoProduto.text.toString()
@@ -67,15 +68,6 @@ class AdicionarProdutoFragment : Fragment() {
         }
     }
 
-    private fun mostrarToast() {
-
-        Toast.makeText(
-            activity?.baseContext,
-            "Produto cadastrado com sucesso!",
-            Toast.LENGTH_LONG
-        ).show()
-    }
-
     private fun notifyRecycleMercado(comprasMercado: MutableList<Mercado>, txtNomeProduto: String, txtPrecoProduto: String){
 
         var mercadoAdapter = MercadoAdapter(comprasMercado)
@@ -85,7 +77,6 @@ class AdicionarProdutoFragment : Fragment() {
 
         comprasMercado.add(Mercado(txtNomeProduto, txtPrecoProduto))
         mercadoAdapter.notifyItemInserted(comprasMercado.lastIndex)
-        mostrarToast()
     }
 
     private fun notifyRecycleFarmacia(comprasFarmacia: MutableList<Farmacia>, txtNomeProduto: String, txtPrecoProduto: String){
@@ -97,7 +88,6 @@ class AdicionarProdutoFragment : Fragment() {
 
         comprasFarmacia.add(Farmacia(txtNomeProduto, txtPrecoProduto))
         farmaciaAdapter.notifyItemInserted(comprasFarmacia.lastIndex)
-        mostrarToast()
     }
 
     private fun notifyRecycleSacolao(comprasSacolao: MutableList<Sacolao>, txtNomeProduto: String, txtPrecoProduto: String){
@@ -109,6 +99,14 @@ class AdicionarProdutoFragment : Fragment() {
 
         comprasSacolao.add(Sacolao(txtNomeProduto, txtPrecoProduto))
         sacolaoAdapter.notifyItemInserted(comprasSacolao.lastIndex)
-        mostrarToast()
+    }
+
+    private fun mostrarToast() {
+
+        Toast.makeText(
+            activity?.baseContext,
+            "Produto cadastrado com sucesso!",
+            Toast.LENGTH_LONG
+        ).show()
     }
 }

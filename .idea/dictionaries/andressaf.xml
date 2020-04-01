@@ -4,6 +4,7 @@
       <w>cadastrado</w>
       <w>cadastrar</w>
       <w>comercio</w>
+      <w>compras</w>
       <w>estabelecimento</w>
       <w>farmacia</w>
       <w>farmacias</w>
@@ -15,6 +16,7 @@
       <w>sucesso</w>
       <w>tipo</w>
       <w>todos</w>
+      <w>verificar</w>
     </words>
   </dictionary>
 </component>

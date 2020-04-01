@@ -19,6 +19,7 @@ import com.example.at_fundamentos.ViewModel.ComercioViewModel
 import kotlinx.android.synthetic.main.fragment_lista_compras.*
 import kotlinx.android.synthetic.main.fragment_mercado.*
 import kotlinx.android.synthetic.main.mercado_recycle.*
+import kotlinx.android.synthetic.main.mercado_recycle.view.*
 
 class MercadoFragment : Fragment() {
 
@@ -72,4 +73,3 @@ class MercadoFragment : Fragment() {
         })
     }
 }
-
