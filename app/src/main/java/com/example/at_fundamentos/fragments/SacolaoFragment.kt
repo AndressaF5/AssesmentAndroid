@@ -32,15 +32,12 @@ class SacolaoFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        var comprasSacolao = mutableListOf(
-            Sacolao("Banana", "3.15 kg"),
-            Sacolao("Manga", "4.99 kg"),
-            Sacolao("Melancia", "2.75 kg"),
-            Sacolao("Maça", "3.55 kg"),
-            Sacolao("Goiaba", "2.00 kg")
-        )
+        var comercioViewModel: ComercioViewModel? = null
+        activity?.let{
+            comercioViewModel = ViewModelProviders.of(it).get(ComercioViewModel::class.java)
+        }
 
-        var sacolaoAdapter = SacolaoAdapter(comprasSacolao)
+        var sacolaoAdapter = SacolaoAdapter(comercioViewModel!!.produtosSacolao)
 
         rcyVwSacolao.adapter = sacolaoAdapter
         rcyVwSacolao.layoutManager = LinearLayoutManager(context)
@@ -66,6 +63,6 @@ class SacolaoFragment : Fragment() {
                 todosOsProdutos!!.add(comercioViewModel!!.produtosSacolao[viewHolder.adapterPosition])
             }
         })
-        itemTouchHelper.attachToRecyclerView(rcyVwListaCompras)
+        itemTouchHelper.attachToRecyclerView(rcyVwSacolao)
     }
 }

@@ -18,6 +18,7 @@ import com.example.at_fundamentos.ViewModel.ComercioViewModel
 import kotlinx.android.synthetic.main.farmacia_recycle.*
 import kotlinx.android.synthetic.main.fragment_farmacia.*
 import kotlinx.android.synthetic.main.fragment_lista_compras.*
+import kotlinx.android.synthetic.main.fragment_sacolao.*
 
 class FarmaciaFragment : Fragment() {
     override fun onCreateView(
@@ -31,15 +32,12 @@ class FarmaciaFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        var comprasFarmacia = mutableListOf(
-            Farmacia("Dorflex", "5.50"),
-            Farmacia("Amoxilina", "10.00"),
-            Farmacia("Diazepam", "7.95"),
-            Farmacia("Miconazol", "20.30"),
-            Farmacia("Paracetamol", "3.45")
-        )
+        var comercioViewModel: ComercioViewModel? = null
+        activity?.let {
+            comercioViewModel = ViewModelProviders.of(it).get(ComercioViewModel::class.java)
+        }
 
-        var farmaciaAdapter = FarmaciaAdapter(comprasFarmacia)
+        var farmaciaAdapter = FarmaciaAdapter(comercioViewModel!!.produtosFarmacia)
 
         rcyVwFarmacia.adapter = farmaciaAdapter
         rcyVwFarmacia.layoutManager = LinearLayoutManager(context)
@@ -62,13 +60,11 @@ class FarmaciaFragment : Fragment() {
                     comercioViewModel = ViewModelProviders.of(it).get(ComercioViewModel::class.java)
                 }
 
-                //val position = viewHolder.adapterPosition
-
                 var todosOsProdutos =  comercioViewModel!!.todosOsProdutos.value
 
                 todosOsProdutos!!.add(comercioViewModel!!.produtosFarmacia[viewHolder.adapterPosition])
             }
         })
-        itemTouchHelper.attachToRecyclerView(rcyVwListaCompras)
+        itemTouchHelper.attachToRecyclerView(rcyVwSacolao)
     }
 }

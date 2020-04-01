@@ -34,15 +34,12 @@ class MercadoFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        var comprasMercado = mutableListOf(
-            Mercado("Arroz", "13.00"),
-            Mercado("Feijão", "4.99"),
-            Mercado("Açúcar", "2.50"),
-            Mercado("Sal", "1.99"),
-            Mercado("Café", "8.99")
-        )
+        var comercioViewModel: ComercioViewModel? = null
+        activity?.let {
+            comercioViewModel = ViewModelProviders.of(it).get(ComercioViewModel::class.java)
+        }
 
-        var mercadoAdapter = MercadoAdapter(comprasMercado)
+        var mercadoAdapter = MercadoAdapter(comercioViewModel!!.produtosMercado)
 
         rcyVwMercado.adapter = mercadoAdapter
         rcyVwMercado.layoutManager = LinearLayoutManager(context)
@@ -62,12 +59,11 @@ class MercadoFragment : Fragment() {
                     comercioViewModel = ViewModelProviders.of(it).get(ComercioViewModel::class.java)
                 }
 
-                var position = viewHolder.adapterPosition
                 var todosOsProdutos = comercioViewModel!!.todosOsProdutos.value
 
                 todosOsProdutos!!.add(comercioViewModel!!.produtosMercado[viewHolder.adapterPosition])
             }
         })
-        itemTouchHelper.attachToRecyclerView(rcyVwListaCompras)
+        itemTouchHelper.attachToRecyclerView(rcyVwMercado)
     }
 }
