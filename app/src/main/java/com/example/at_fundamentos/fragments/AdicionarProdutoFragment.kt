@@ -48,8 +48,8 @@ class AdicionarProdutoFragment : Fragment() {
 
     fun verificarComercio(tipo: String) {
 
-        //var txtNomeProduto = editTextNomeProduto.text.toString()
-        //var txtPrecoProduto = editTextPrecoProduto.text.toString()
+        var txtNomeProduto = editTextNomeProduto.text.toString()
+        var txtPrecoProduto = editTextPrecoProduto.text.toString()
 
         var comercioViewModel: ComercioViewModel? = null
         activity?.let{
@@ -57,17 +57,17 @@ class AdicionarProdutoFragment : Fragment() {
         }
 
         if (tipo == "Mercado" || tipo == "mercado"){
-            notifyRecycleMercado(comercioViewModel!!.produtosMercado)
+            notifyRecycleMercado(comercioViewModel!!.produtosMercado, txtNomeProduto, txtPrecoProduto)
 
         }else if (tipo == "Farmacia" || tipo == "farmacia"){
-            notifyRecycleFarmacia(comercioViewModel!!.produtosFarmacia)
+            notifyRecycleFarmacia(comercioViewModel!!.produtosFarmacia, txtNomeProduto, txtPrecoProduto)
 
         }else{
-            notifyRecycleSacolao(comercioViewModel!!.produtosSacolao)
+            notifyRecycleSacolao(comercioViewModel!!.produtosSacolao, txtNomeProduto, txtPrecoProduto)
         }
     }
 
-    fun mostrarToast() {
+    private fun mostrarToast() {
 
         Toast.makeText(
             activity?.baseContext,
@@ -76,15 +76,7 @@ class AdicionarProdutoFragment : Fragment() {
         ).show()
     }
 
-    fun notifyRecycleMercado(comprasMercado: MutableList<Mercado>){
-
-        var txtNomeProduto = editTextNomeProduto.text.toString()
-        var txtPrecoProduto = editTextPrecoProduto.text.toString()
-
-        var mercadoViewModel: ComercioViewModel? = null
-        activity?.let{
-            mercadoViewModel = ViewModelProviders.of(it).get(ComercioViewModel::class.java)
-        }
+    private fun notifyRecycleMercado(comprasMercado: MutableList<Mercado>, txtNomeProduto: String, txtPrecoProduto: String){
 
         var mercadoAdapter = MercadoAdapter(comprasMercado)
 
@@ -96,15 +88,7 @@ class AdicionarProdutoFragment : Fragment() {
         mostrarToast()
     }
 
-    fun notifyRecycleFarmacia(comprasFarmacia: MutableList<Farmacia>){
-
-        var txtNomeProduto = editTextNomeProduto.text.toString()
-        var txtPrecoProduto = editTextPrecoProduto.text.toString()
-
-        var farmaciaViewModel: ComercioViewModel? = null
-        activity?.let{
-            farmaciaViewModel = ViewModelProviders.of(it).get(ComercioViewModel::class.java)
-        }
+    private fun notifyRecycleFarmacia(comprasFarmacia: MutableList<Farmacia>, txtNomeProduto: String, txtPrecoProduto: String){
 
         var farmaciaAdapter = FarmaciaAdapter(comprasFarmacia)
 
@@ -116,15 +100,7 @@ class AdicionarProdutoFragment : Fragment() {
         mostrarToast()
     }
 
-    fun notifyRecycleSacolao(comprasSacolao: MutableList<Sacolao>){
-
-        var txtNomeProduto = editTextNomeProduto.text.toString()
-        var txtPrecoProduto = editTextPrecoProduto.text.toString()
-
-        var sacolaoViewModel: ComercioViewModel? = null
-        activity?.let{
-            sacolaoViewModel = ViewModelProviders.of(it).get(ComercioViewModel::class.java)
-        }
+    private fun notifyRecycleSacolao(comprasSacolao: MutableList<Sacolao>, txtNomeProduto: String, txtPrecoProduto: String){
 
         var sacolaoAdapter = SacolaoAdapter(comprasSacolao)
 
