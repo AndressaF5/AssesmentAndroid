@@ -70,34 +70,22 @@ class AdicionarProdutoFragment : Fragment() {
 
     private fun notifyRecycleMercado(comprasMercado: MutableList<Mercado>, txtNomeProduto: String, txtPrecoProduto: String){
 
-        var mercadoAdapter = MercadoAdapter(comprasMercado)
-
-        rcyVwMercado.adapter = mercadoAdapter
-        rcyVwMercado.layoutManager = LinearLayoutManager(context)
-
         comprasMercado.add(Mercado(txtNomeProduto, txtPrecoProduto))
+        var mercadoAdapter = MercadoAdapter(comprasMercado)
         mercadoAdapter.notifyItemInserted(comprasMercado.lastIndex)
     }
 
     private fun notifyRecycleFarmacia(comprasFarmacia: MutableList<Farmacia>, txtNomeProduto: String, txtPrecoProduto: String){
 
-        var farmaciaAdapter = FarmaciaAdapter(comprasFarmacia)
-
-        rcyVwFarmacia.adapter = farmaciaAdapter
-        rcyVwFarmacia.layoutManager = LinearLayoutManager(context)
-
         comprasFarmacia.add(Farmacia(txtNomeProduto, txtPrecoProduto))
+        var farmaciaAdapter = FarmaciaAdapter(comprasFarmacia)
         farmaciaAdapter.notifyItemInserted(comprasFarmacia.lastIndex)
     }
 
     private fun notifyRecycleSacolao(comprasSacolao: MutableList<Sacolao>, txtNomeProduto: String, txtPrecoProduto: String){
 
-        var sacolaoAdapter = SacolaoAdapter(comprasSacolao)
-
-        rcyVwSacolao.adapter = sacolaoAdapter
-        rcyVwSacolao.layoutManager = LinearLayoutManager(context)
-
         comprasSacolao.add(Sacolao(txtNomeProduto, txtPrecoProduto))
+        var sacolaoAdapter = SacolaoAdapter(comprasSacolao)
         sacolaoAdapter.notifyItemInserted(comprasSacolao.lastIndex)
     }
 
