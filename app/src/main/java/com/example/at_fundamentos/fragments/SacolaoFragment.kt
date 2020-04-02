@@ -33,7 +33,6 @@ class SacolaoFragment : Fragment() {
         }
 
         var sacolaoAdapter = SacolaoAdapter(comercioViewModel!!.produtosSacolao)
-
         rcyVwSacolao.adapter = sacolaoAdapter
         rcyVwSacolao.layoutManager = LinearLayoutManager(context)
 
@@ -47,14 +46,8 @@ class SacolaoFragment : Fragment() {
             ): Boolean = false
 
             override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
-                var comercioViewModel: ComercioViewModel? = null
-                activity?.let{
-                    comercioViewModel = ViewModelProviders.of(it).get(ComercioViewModel::class.java)
-                }
 
-                //val position = viewHolder.adapterPosition
                 var todosOsProdutos = comercioViewModel!!.todosOsProdutos.value
-
                 todosOsProdutos!!.add(comercioViewModel!!.produtosSacolao[viewHolder.adapterPosition])
             }
         })

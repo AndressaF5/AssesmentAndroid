@@ -37,7 +37,6 @@ class ListaComprasFragment : Fragment() {
         var todosOsProdutos = comercioViewModel!!.todosOsProdutos
 
         var listaComprasAdapter = ListaComprasAdapter(todosOsProdutos.value)
-
         rcyVwListaCompras.adapter = listaComprasAdapter
         rcyVwListaCompras.layoutManager = LinearLayoutManager(context)
 
@@ -57,10 +56,6 @@ class ListaComprasFragment : Fragment() {
             ): Boolean = false
 
             override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
-                var comercioViewModel: ComercioViewModel? = null
-                activity?.let {
-                    comercioViewModel = ViewModelProviders.of(it).get(ComercioViewModel::class.java)
-                }
 
                 val position = viewHolder.adapterPosition
                 todosOsProdutos.value!!.removeAt(position)

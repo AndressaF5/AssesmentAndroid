@@ -36,11 +36,6 @@ class AdicionarProdutoFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        var comercioViewModel: ComercioViewModel? = null
-        activity?.let{
-            comercioViewModel = ViewModelProviders.of(it).get(ComercioViewModel::class.java)
-        }
-
         btnCadastrar.setOnClickListener{
             verificarComercio(editTextTipoComercio.text.toString())
             mostrarToast()

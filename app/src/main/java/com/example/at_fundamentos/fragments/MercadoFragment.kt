@@ -33,7 +33,6 @@ class MercadoFragment : Fragment() {
         }
 
         var mercadoAdapter = MercadoAdapter(comercioViewModel!!.produtosMercado)
-
         rcyVwMercado.adapter = mercadoAdapter
         rcyVwMercado.layoutManager = LinearLayoutManager(context)
 
@@ -47,13 +46,8 @@ class MercadoFragment : Fragment() {
             ): Boolean = false
 
             override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
-                var comercioViewModel: ComercioViewModel? = null
-                activity?.let {
-                    comercioViewModel = ViewModelProviders.of(it).get(ComercioViewModel::class.java)
-                }
 
                 var todosOsProdutos = comercioViewModel!!.todosOsProdutos.value
-
                 todosOsProdutos!!.add(comercioViewModel!!.produtosMercado[viewHolder.adapterPosition])
             }
         })

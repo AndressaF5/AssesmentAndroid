@@ -32,15 +32,12 @@ class FarmaciaFragment : Fragment() {
         }
 
         var farmaciaAdapter = FarmaciaAdapter(comercioViewModel!!.produtosFarmacia)
-
         rcyVwFarmacia.adapter = farmaciaAdapter
         rcyVwFarmacia.layoutManager = LinearLayoutManager(context)
 
         val itemTouchHelper = ItemTouchHelper(object: ItemTouchHelper.SimpleCallback(
             0, ItemTouchHelper.RIGHT
-
         ) {
-
             override fun onMove(
                 recyclerView: RecyclerView,
                 viewHolder: RecyclerView.ViewHolder,
@@ -49,13 +46,7 @@ class FarmaciaFragment : Fragment() {
 
             override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
 
-                var comercioViewModel: ComercioViewModel? = null
-                activity?.let {
-                    comercioViewModel = ViewModelProviders.of(it).get(ComercioViewModel::class.java)
-                }
-
                 var todosOsProdutos =  comercioViewModel!!.todosOsProdutos.value
-
                 todosOsProdutos!!.add(comercioViewModel!!.produtosFarmacia[viewHolder.adapterPosition])
             }
         })
