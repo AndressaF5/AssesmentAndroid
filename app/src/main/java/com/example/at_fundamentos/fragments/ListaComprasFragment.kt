@@ -40,11 +40,11 @@ class ListaComprasFragment : Fragment() {
         rcyVwListaCompras.adapter = listaComprasAdapter
         rcyVwListaCompras.layoutManager = LinearLayoutManager(context)
 
-        /*todosOsProdutos.observe(viewLifecycleOwner, Observer {
+        todosOsProdutos.observe(viewLifecycleOwner, Observer {
             if(isAdded){
                 listaComprasAdapter.notifyItemInserted(todosOsProdutos.value!!.lastIndex)
             }
-        })*/
+        })
 
         val itemTouchHelper = ItemTouchHelper(object : ItemTouchHelper.SimpleCallback(
             0, ItemTouchHelper.LEFT

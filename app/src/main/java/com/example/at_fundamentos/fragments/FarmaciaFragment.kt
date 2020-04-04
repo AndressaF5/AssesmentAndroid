@@ -5,11 +5,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.LifecycleOwner
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.at_fundamentos.Adapter.FarmaciaAdapter
+import com.example.at_fundamentos.Adapter.ListaComprasAdapter
 import com.example.at_fundamentos.R
 import com.example.at_fundamentos.ViewModel.ComercioViewModel
 import kotlinx.android.synthetic.main.fragment_farmacia.*
@@ -48,6 +51,13 @@ class FarmaciaFragment : Fragment() {
 
                 var todosOsProdutos =  comercioViewModel!!.todosOsProdutos.value
                 todosOsProdutos!!.add(comercioViewModel!!.produtosFarmacia[viewHolder.adapterPosition])
+
+                comercioViewModel!!.todosOsProdutos.observe(viewLifecycleOwner, Observer {
+                    if(isAdded){
+                        var listaComprasAdapter = ListaComprasAdapter(todosOsProdutos)
+                        listaComprasAdapter.notifyItemInserted(todosOsProdutos.lastIndex)
+                    }
+                })
             }
         })
         itemTouchHelper.attachToRecyclerView(rcyVwFarmacia)
