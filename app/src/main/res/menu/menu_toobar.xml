@@ -4,7 +4,7 @@
 
     <item
         android:id="@+id/cadastrarProduto_dest"
-        android:title="Cadastrar"
+        android:title="Adicionar"
         app:showAsAction="never" />
 
     <item

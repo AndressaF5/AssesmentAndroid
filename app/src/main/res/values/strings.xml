@@ -3,14 +3,10 @@
     <string name="txtNomeProduto">Nome do Produto</string>
     <string name="txtPreco">Preço do Produto</string>
     <string name="txtListaCompras">Lista de compras</string>
-    <string name="txtCadastroProduto">Cadastrar produtos</string>
+    <string name="txtAdicionarProduto">Adicionar produto</string>
     <string name="txtComercio">Comércio</string>
     <string name="txtTipoComercio">Mercado, Farmacia ou Sacolão</string>
     <string name="btnCadastrar">Cadastrar</string>
-    <string name="title_activity_main2">Main2Activity</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
     <string name="menuMercado">Mercado</string>
     <string name="menuFarmacia">Farmácia</string>
     <string name="menuSacolao">Sacolão</string>

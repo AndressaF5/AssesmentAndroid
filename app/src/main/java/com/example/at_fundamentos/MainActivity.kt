@@ -20,6 +20,18 @@ class MainActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return super.onOptionsItemSelected(item)
 
+        when (item.itemId){
+            R.id.cadastrarProduto_dest -> {
 
+            }
+
+            R.id.listaCompras_dest -> {
+
+            }
+
+            R.id.comercio_dest -> {
+
+            }
+        }
     }
 }

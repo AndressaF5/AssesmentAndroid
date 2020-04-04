@@ -29,9 +29,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
-            android:text="@string/txtCadastroProduto"
+            android:text="@string/txtAdicionarProduto"
             android:textColor="@color/colorBlack"
-            android:textSize="30sp"
+            android:textSize="20sp"
             app:layout_constraintEnd_toStartOf="@+id/guideline2"
             app:layout_constraintStart_toStartOf="@+id/guideline"
             app:layout_constraintTop_toTopOf="parent" />
