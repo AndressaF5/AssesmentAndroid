@@ -45,6 +45,7 @@
             android:ems="10"
             android:hint="@string/txtNomeProduto"
             android:inputType="textPersonName"
+            android:contentDescription="Inserir nome do produto aqui"
             app:layout_constraintEnd_toStartOf="@+id/guideline2"
             app:layout_constraintStart_toStartOf="@+id/guideline"
             app:layout_constraintTop_toBottomOf="@+id/textView" />
@@ -71,6 +72,7 @@
             android:ems="10"
             android:hint="@string/txtPreco"
             android:inputType="textPersonName"
+            android:contentDescription="Insira o valor do produto"
             app:layout_constraintEnd_toStartOf="@+id/guideline2"
             app:layout_constraintStart_toStartOf="@+id/guideline"
             app:layout_constraintTop_toBottomOf="@+id/editTextNomeProduto" />
@@ -98,6 +100,7 @@
             android:ems="10"
             android:hint="@string/txtTipoComercio"
             android:inputType="textPersonName"
+            android:contentDescription="Insira o tipo de comercio: Mercado, farmacia ou sacolao"
             app:layout_constraintBottom_toTopOf="@+id/btnCadastrar"
             app:layout_constraintEnd_toStartOf="@+id/guideline2"
             app:layout_constraintStart_toStartOf="@+id/guideline"
@@ -123,6 +126,7 @@
             android:layout_height="wrap_content"
             android:text="@string/btnCadastrar"
             android:textSize="15sp"
+            android:contentDescription="Botão para cadastrar"
             app:layout_constraintBottom_toTopOf="@+id/guideline10"
             app:layout_constraintEnd_toStartOf="@+id/guideline2"
             app:layout_constraintHorizontal_bias="0.0"

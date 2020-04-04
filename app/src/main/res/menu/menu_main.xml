@@ -3,22 +3,17 @@
 
     <item
         android:id="@+id/mercado_dest"
-        android:title="Mercado" />
+        android:title="@string/menuMercado"
+        android:contentDescription="Produtos de mercado" />
 
     <item
         android:id="@+id/farmacia_dest"
-        android:title="Farmácia" />
+        android:title="@string/menuFarmacia"
+        android:contentDescription="Produtos de farmácia" />
 
     <item
         android:id="@+id/sacolao_dest"
-        android:title="Sacolão" />
-
-    <item
-        android:id="@+id/cadastrarProduto_dest"
-        android:title="Cadastrar Produto" />
-
-    <item
-        android:id="@+id/listaCompras_dest"
-        android:title="Lista de Compras" />
+        android:title="@string/menuSacolao"
+        android:contentDescription="Produtos de sacolão" />
 
 </menu>
