@@ -1,4 +1,5 @@
 <resources>
     <dimen name="guideline_vertical">15dp</dimen>
     <dimen name="guideline_horizontal">15dp</dimen>
+    <dimen name="appbar_padding">16dp</dimen>
 </resources>

@@ -4,7 +4,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.lifecycle.ViewModelProviders
+import androidx.viewpager.widget.ViewPager
+import com.example.at_fundamentos.Adapter.DeslizePagerAdapter
 import com.example.at_fundamentos.ViewModel.ComercioViewModel
+import com.google.android.material.tabs.TabLayout
 
 class MainActivity : AppCompatActivity() {
 
@@ -14,24 +17,9 @@ class MainActivity : AppCompatActivity() {
 
         var comercioViewModel = ViewModelProviders.of(this).get(ComercioViewModel::class.java)
 
-        setSupportActionBar(findViewById(R.id.toolbar))
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return super.onOptionsItemSelected(item)
-
-        when (item.itemId){
-            R.id.cadastrarProduto_dest -> {
-
-            }
-
-            R.id.listaCompras_dest -> {
-
-            }
-
-            R.id.comercio_dest -> {
-
-            }
-        }
+        val viewPager: ViewPager = findViewById(R.id.view_pager)
+        val tabs: TabLayout = findViewById(R.id.tabs)
+        tabs.setupWithViewPager(viewPager)
+        viewPager.adapter = DeslizePagerAdapter(supportFragmentManager)
     }
 }
