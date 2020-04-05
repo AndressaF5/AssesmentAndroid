@@ -18,8 +18,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        var comercioViewModel = ViewModelProviders.of(this).get(ComercioViewModel::class.java)
-
         bottomNavigationComercio.setupWithNavController(findNavController(R.id.fragment))
     }
 }
