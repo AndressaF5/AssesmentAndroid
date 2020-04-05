@@ -17,10 +17,12 @@ class DeslizePagerAdapter (fm: FragmentManager):
     val numeroDeTabs = 3
     val opcoes = listOf("Home", "Produtos", "Minha Lista")
 
-    override fun getItem(position: Int) = when(position) {
-        0 -> HomeFragment()
-        1 -> ComercioActivity()
-        else -> ListaComprasFragment()
+    override fun getItem(position: Int) {
+        when(position){
+            0 -> HomeFragment()
+            1 -> ComercioActivity()
+            else -> ListaComprasFragment()
+        }
     }
 
     override fun getPageTitle(position: Int) = opcoes[position]
