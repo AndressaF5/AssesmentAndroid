@@ -2,18 +2,18 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/mercado_dest"
-        android:title="@string/menuMercado"
-        android:contentDescription="Produtos de mercado" />
+        android:id="@+id/home_dest"
+        android:title="Home"
+        android:contentDescription="Página Inicial" />
 
     <item
-        android:id="@+id/farmacia_dest"
-        android:title="@string/menuFarmacia"
-        android:contentDescription="Produtos de farmácia" />
+        android:id="@+id/comercio_dest"
+        android:title="Comércio"
+        android:contentDescription="Página com produtos" />
 
     <item
-        android:id="@+id/sacolao_dest"
-        android:title="@string/menuSacolao"
-        android:contentDescription="Produtos de sacolão" />
+        android:id="@+id/lista_dest"
+        android:title="Lista"
+        android:contentDescription="Lista de compras" />
 
 </menu>

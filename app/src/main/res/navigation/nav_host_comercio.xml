@@ -3,21 +3,20 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_host_main"
-    app:startDestination="@id/mercado_dest">
-
+    app:startDestination="@id/home_dest">
     <fragment
-        android:id="@+id/farmacia_dest"
-        android:name="com.example.at_fundamentos.fragments.FarmaciaFragment"
-        android:label="fragment_farmacia"
-        tools:layout="@layout/fragment_farmacia" />
+        android:id="@+id/home_dest"
+        android:name="com.example.at_fundamentos.fragments.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" />
+    <activity
+        android:id="@+id/comercio_dest"
+        android:name="com.example.at_fundamentos.ComercioActivity"
+        android:label="activity_comercio"
+        tools:layout="@layout/activity_comercio" />
     <fragment
-        android:id="@+id/mercado_dest"
-        android:name="com.example.at_fundamentos.fragments.MercadoFragment"
-        android:label="fragment_mercado"
-        tools:layout="@layout/fragment_mercado" />
-    <fragment
-        android:id="@+id/sacolao_dest"
-        android:name="com.example.at_fundamentos.fragments.SacolaoFragment"
-        android:label="fragment_sacolao"
-        tools:layout="@layout/fragment_sacolao" />
+        android:id="@+id/lista_dest"
+        android:name="com.example.at_fundamentos.fragments.ListaComprasFragment"
+        android:label="fragment_lista_compras"
+        tools:layout="@layout/fragment_lista_compras" />
 </navigation>
