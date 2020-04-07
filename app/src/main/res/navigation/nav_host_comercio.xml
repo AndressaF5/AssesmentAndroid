@@ -9,14 +9,14 @@
         android:name="com.example.at_fundamentos.fragments.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" />
-    <activity
-        android:id="@+id/comercio_dest"
-        android:name="com.example.at_fundamentos.ComercioActivity"
-        android:label="activity_comercio"
-        tools:layout="@layout/activity_comercio" />
     <fragment
         android:id="@+id/lista_dest"
         android:name="com.example.at_fundamentos.fragments.ListaComprasFragment"
         android:label="fragment_lista_compras"
         tools:layout="@layout/fragment_lista_compras" />
+    <fragment
+        android:id="@+id/comercio_dest"
+        android:name="com.example.at_fundamentos.fragments.ComercioFragment"
+        android:label="fragment_comercio"
+        tools:layout="@layout/fragment_comercio" />
 </navigation>

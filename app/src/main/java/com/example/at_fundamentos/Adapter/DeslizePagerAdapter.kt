@@ -12,16 +12,18 @@ import com.example.at_fundamentos.fragments.*
 class DeslizePagerAdapter (fm: FragmentManager):
     FragmentPagerAdapter(fm, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT){
 
-    val numeroDeTabs = 3
-    val opcoes = listOf("Mercado", "Farmácia", "Sacolão")
+    val numeroDeTabs = 4
+    val opcoes = listOf("Mercado", "Farmácia", "Sacolão", "Adicionar Produto")
 
     override fun getItem(position: Int): Fragment {
         if (position == 0){
             return MercadoFragment()
         }else if (position == 1){
             return FarmaciaFragment()
-        }else{
+        }else if (position == 2){
             return SacolaoFragment()
+        }else{
+            return AdicionarProdutoFragment()
         }
     }
 

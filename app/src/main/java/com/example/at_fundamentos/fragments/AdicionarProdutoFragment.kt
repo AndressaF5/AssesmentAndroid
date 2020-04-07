@@ -37,8 +37,15 @@ class AdicionarProdutoFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         btnCadastrar.setOnClickListener{
+            verificarEditTextNulo()
             verificarComercio(editTextTipoComercio.text.toString())
-            mostrarToast()
+            mostrarToast("Produto cadastrado com sucesso")
+        }
+    }
+
+    private fun verificarEditTextNulo(){
+        if (editTextNomeProduto == null || editTextPrecoProduto == null || editTextTipoComercio == null){
+            mostrarToast("Todos os campos devem ser preenchidos")
         }
     }
 
@@ -58,8 +65,10 @@ class AdicionarProdutoFragment : Fragment() {
         }else if (tipo == "Farmacia" || tipo == "farmacia"){
             notifyRecycleFarmacia(comercioViewModel!!.produtosFarmacia, txtNomeProduto, txtPrecoProduto)
 
-        }else{
+        }else if(tipo == "Sacolao" || tipo == "sacolao"){
             notifyRecycleSacolao(comercioViewModel!!.produtosSacolao, txtNomeProduto, txtPrecoProduto)
+        }else{
+            mostrarToast("Tipo incorreto")
         }
     }
 
@@ -84,12 +93,12 @@ class AdicionarProdutoFragment : Fragment() {
         sacolaoAdapter.notifyItemInserted(comprasSacolao.lastIndex)
     }
 
-    private fun mostrarToast() {
+    private fun mostrarToast(mensagem: String) {
 
         Toast.makeText(
             activity?.baseContext,
-            "Produto cadastrado com sucesso!",
-            Toast.LENGTH_LONG
+            mensagem,
+            Toast.LENGTH_SHORT
         ).show()
     }
 }

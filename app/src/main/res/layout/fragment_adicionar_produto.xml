@@ -28,7 +28,7 @@
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="70dp"
             android:text="@string/txtAdicionarProduto"
             android:textColor="@color/colorBlack"
             android:textSize="20sp"
@@ -139,7 +139,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_begin="677dp" />
+            app:layout_constraintGuide_begin="600dp" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
