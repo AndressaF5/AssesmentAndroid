@@ -36,9 +36,9 @@ class ComercioViewModel : ViewModel() {
         Sacolao("Goiaba", "2.00 kg")
     )
 
-    var todosOsProdutos: MutableList<Estabelecimento> = mutableListOf()
-
-    var totalCompras = MutableLiveData<Int>().apply {
-        value = 0
+    var todosOsProdutos = MutableLiveData<MutableList<Estabelecimento>>().apply {
+        value = mutableListOf()
     }
+
+    var totalCompras: Int = 0
 }

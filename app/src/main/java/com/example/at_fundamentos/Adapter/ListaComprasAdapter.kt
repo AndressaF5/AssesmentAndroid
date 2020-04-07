@@ -3,9 +3,11 @@ package com.example.at_fundamentos.Adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.RecyclerView
 import com.example.at_fundamentos.Model.Estabelecimento
 import com.example.at_fundamentos.R
+import com.example.at_fundamentos.ViewModel.ComercioViewModel
 import kotlinx.android.synthetic.main.lista_compras_recycle.view.*
 
 class ListaComprasAdapter(var todosOsProdutos: MutableList<Estabelecimento>?)

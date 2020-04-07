@@ -34,17 +34,11 @@ class ListaComprasFragment : Fragment() {
             comercioViewModel = ViewModelProviders.of(it).get(ComercioViewModel::class.java)
         }
 
-        var todosOsProdutos = comercioViewModel!!.todosOsProdutos
+        var todosOsProdutos = comercioViewModel!!.todosOsProdutos.value
 
-        var listaComprasAdapter = ListaComprasAdapter(todosOsProdutos.value)
+        var listaComprasAdapter = ListaComprasAdapter(todosOsProdutos)
         rcyVwListaCompras.adapter = listaComprasAdapter
         rcyVwListaCompras.layoutManager = LinearLayoutManager(context)
-
-        todosOsProdutos.observe(viewLifecycleOwner, Observer {
-            if(isAdded){
-                listaComprasAdapter.notifyItemInserted(todosOsProdutos.value!!.lastIndex)
-            }
-        })
 
         val itemTouchHelper = ItemTouchHelper(object : ItemTouchHelper.SimpleCallback(
             0, ItemTouchHelper.LEFT
@@ -58,11 +52,12 @@ class ListaComprasFragment : Fragment() {
             override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
 
                 val position = viewHolder.adapterPosition
-                todosOsProdutos.value!!.removeAt(position)
+                todosOsProdutos!!.removeAt(position)
                 listaComprasAdapter.notifyItemRemoved(position)
             }
         })
-
         itemTouchHelper.attachToRecyclerView(rcyVwListaCompras)
+
+        txtVwTotalCompras.text = "Total de compras = " + comercioViewModel!!.totalCompras.toString()
     }
 }

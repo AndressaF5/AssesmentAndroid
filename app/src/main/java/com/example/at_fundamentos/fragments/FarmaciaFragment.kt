@@ -49,8 +49,8 @@ class FarmaciaFragment : Fragment() {
 
             override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
 
-                var todosOsProdutos =  comercioViewModel!!.todosOsProdutos.value
-                todosOsProdutos!!.add(comercioViewModel!!.produtosFarmacia[viewHolder.adapterPosition])
+                var todosOsProdutos =  comercioViewModel!!.todosOsProdutos
+                todosOsProdutos.value!!.add(comercioViewModel!!.produtosFarmacia[viewHolder.adapterPosition])
             }
         })
         itemTouchHelper.attachToRecyclerView(rcyVwFarmacia)
