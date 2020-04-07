@@ -3,6 +3,7 @@ package com.example.at_fundamentos
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
@@ -19,5 +20,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         bottomNavigationComercio.setupWithNavController(findNavController(R.id.fragment))
+
+        var comercioViewModel = ViewModelProviders.of(this).get(ComercioViewModel::class.java)
     }
 }

@@ -18,6 +18,8 @@ import kotlinx.android.synthetic.main.fragment_lista_compras.*
 
 class ListaComprasFragment : Fragment() {
 
+    var novoValor: Double = 0.0
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -52,12 +54,17 @@ class ListaComprasFragment : Fragment() {
             override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
 
                 val position = viewHolder.adapterPosition
+
+                comercioViewModel!!.todosOsProdutos.observe(viewLifecycleOwner, Observer {
+                    comercioViewModel!!.totalCompras = comercioViewModel!!.totalCompras - todosOsProdutos!![position].precoProduto.toDouble()
+                })
+
                 todosOsProdutos!!.removeAt(position)
                 listaComprasAdapter.notifyItemRemoved(position)
             }
         })
         itemTouchHelper.attachToRecyclerView(rcyVwListaCompras)
 
-        txtVwTotalCompras.text = "Total de compras = " + comercioViewModel!!.totalCompras.toString()
+        txtVwTotalCompras.text = "Total de compras = " + comercioViewModel!!.totalCompras
     }
 }

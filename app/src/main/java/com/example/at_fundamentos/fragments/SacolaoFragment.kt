@@ -51,6 +51,11 @@ class SacolaoFragment : Fragment() {
 
                 var todosOsProdutos = comercioViewModel!!.todosOsProdutos.value
                 todosOsProdutos!!.add(comercioViewModel!!.produtosSacolao[viewHolder.adapterPosition])
+
+                comercioViewModel!!.todosOsProdutos.observe(viewLifecycleOwner, Observer {
+                    comercioViewModel!!.totalCompras = comercioViewModel!!.totalCompras + comercioViewModel!!.produtosSacolao[viewHolder.adapterPosition].precoProduto.toDouble()
+
+                })
             }
         })
         itemTouchHelper.attachToRecyclerView(rcyVwSacolao)

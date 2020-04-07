@@ -28,7 +28,7 @@
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="70dp"
+            android:layout_marginTop="50dp"
             android:text="@string/txtAdicionarProduto"
             android:textColor="@color/colorBlack"
             android:textSize="20sp"
@@ -41,11 +41,11 @@
             android:id="@+id/editTextNomeProduto"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="100dp"
+            android:layout_marginTop="70dp"
+            android:contentDescription="Inserir nome do produto aqui"
             android:ems="10"
             android:hint="@string/txtNomeProduto"
             android:inputType="textPersonName"
-            android:contentDescription="Inserir nome do produto aqui"
             app:layout_constraintEnd_toStartOf="@+id/guideline2"
             app:layout_constraintStart_toStartOf="@+id/guideline"
             app:layout_constraintTop_toBottomOf="@+id/textView" />
@@ -124,15 +124,15 @@
             android:id="@+id/btnCadastrar"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:contentDescription="Botão para cadastrar"
             android:text="@string/btnCadastrar"
             android:textSize="15sp"
-            android:contentDescription="Botão para cadastrar"
             app:layout_constraintBottom_toTopOf="@+id/guideline10"
             app:layout_constraintEnd_toStartOf="@+id/guideline2"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/guideline"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.755" />
+            app:layout_constraintVertical_bias="0.78" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline10"

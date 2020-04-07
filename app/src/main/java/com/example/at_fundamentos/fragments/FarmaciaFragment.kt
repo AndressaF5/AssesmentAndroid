@@ -51,6 +51,11 @@ class FarmaciaFragment : Fragment() {
 
                 var todosOsProdutos =  comercioViewModel!!.todosOsProdutos
                 todosOsProdutos.value!!.add(comercioViewModel!!.produtosFarmacia[viewHolder.adapterPosition])
+
+                comercioViewModel!!.todosOsProdutos.observe(viewLifecycleOwner, Observer {
+                    comercioViewModel!!.totalCompras = comercioViewModel!!.totalCompras + comercioViewModel!!.produtosFarmacia[viewHolder.adapterPosition].precoProduto.toDouble()
+
+                })
             }
         })
         itemTouchHelper.attachToRecyclerView(rcyVwFarmacia)
