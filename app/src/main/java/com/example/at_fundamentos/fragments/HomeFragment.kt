@@ -27,7 +27,7 @@ class HomeFragment : Fragment() {
             val url: String = "https://m.tudogostoso.com.br"
             val webPage: Uri = Uri.parse(url)
             val intent = Intent(Intent.ACTION_VIEW, webPage)
-            if(intent.resolveActivity(packageManager) != null){
+            if(intent.resolveActivity(activity!!.packageManager) != null){
                 startActivity(intent)
             }
         }
