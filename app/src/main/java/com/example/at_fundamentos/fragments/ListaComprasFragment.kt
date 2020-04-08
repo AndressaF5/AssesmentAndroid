@@ -55,14 +55,10 @@ class ListaComprasFragment : Fragment() {
 
                 val position = viewHolder.adapterPosition
                 comercioViewModel!!.totalCompras = comercioViewModel!!.totalCompras - todosOsProdutos!![position].precoProduto.toDouble()
-                todosOsProdutos!!.removeAt(position)
+                todosOsProdutos.removeAt(position)
                 listaComprasAdapter.notifyItemRemoved(position)
             }
         })
         itemTouchHelper.attachToRecyclerView(rcyVwListaCompras)
-
-
-
-        txtVwTotalCompras.text = "Total de compras = " + comercioViewModel!!.totalCompras
     }
 }

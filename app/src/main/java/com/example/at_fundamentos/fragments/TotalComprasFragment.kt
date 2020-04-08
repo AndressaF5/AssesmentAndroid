@@ -10,6 +10,7 @@ import androidx.lifecycle.ViewModelProviders
 
 import com.example.at_fundamentos.R
 import com.example.at_fundamentos.ViewModel.ComercioViewModel
+import kotlinx.android.synthetic.main.fragment_total_compras.*
 
 class TotalComprasFragment : Fragment() {
 
@@ -27,7 +28,12 @@ class TotalComprasFragment : Fragment() {
         var comercioViewModel: ComercioViewModel = ViewModelProviders.of(this).get(ComercioViewModel::class.java)
 
         comercioViewModel.todosOsProdutos.observe(viewLifecycleOwner, Observer {
-
+            var total = 0.0
+            it.forEach {
+                total += it.precoProduto.toDouble()
+            }
+            comercioViewModel.totalCompras = total
+            txtVwTotalCompras.text = "Total da compra = " + comercioViewModel.totalCompras.toString()
         })
     }
 }

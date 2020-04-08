@@ -8,7 +8,7 @@
     tools:context=".fragments.TotalComprasFragment">
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/txtVwTotalCompras"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="TextView"
