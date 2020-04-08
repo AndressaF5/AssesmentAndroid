@@ -51,11 +51,7 @@ class MercadoFragment : Fragment() {
 
                 var todosOsProdutos = comercioViewModel!!.todosOsProdutos.value
                 todosOsProdutos!!.add(comercioViewModel!!.produtosMercado[viewHolder.adapterPosition])
-
-                comercioViewModel!!.todosOsProdutos.observe(viewLifecycleOwner, Observer {
-                    comercioViewModel!!.totalCompras = comercioViewModel!!.totalCompras + comercioViewModel!!.produtosMercado[viewHolder.adapterPosition].precoProduto.toDouble()
-
-                })
+                comercioViewModel!!.totalCompras = comercioViewModel!!.totalCompras + comercioViewModel!!.produtosMercado[viewHolder.adapterPosition].precoProduto.toDouble()
             }
         })
         itemTouchHelper.attachToRecyclerView(rcyVwMercado)

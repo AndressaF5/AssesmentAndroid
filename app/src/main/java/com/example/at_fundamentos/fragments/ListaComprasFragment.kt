@@ -54,16 +54,14 @@ class ListaComprasFragment : Fragment() {
             override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
 
                 val position = viewHolder.adapterPosition
-
-                comercioViewModel!!.todosOsProdutos.observe(viewLifecycleOwner, Observer {
-                    comercioViewModel!!.totalCompras = comercioViewModel!!.totalCompras - todosOsProdutos!![position].precoProduto.toDouble()
-                })
-
+                comercioViewModel!!.totalCompras = comercioViewModel!!.totalCompras - todosOsProdutos!![position].precoProduto.toDouble()
                 todosOsProdutos!!.removeAt(position)
                 listaComprasAdapter.notifyItemRemoved(position)
             }
         })
         itemTouchHelper.attachToRecyclerView(rcyVwListaCompras)
+
+
 
         txtVwTotalCompras.text = "Total de compras = " + comercioViewModel!!.totalCompras
     }
