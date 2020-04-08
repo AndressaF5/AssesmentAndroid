@@ -29,6 +29,7 @@ class TotalComprasFragment : Fragment() {
 
         comercioViewModel.todosOsProdutos.observe(viewLifecycleOwner, Observer {
             var total = 0.0
+            println("Evento disparado!")
             it.forEach {
                 total += it.precoProduto.toDouble()
             }

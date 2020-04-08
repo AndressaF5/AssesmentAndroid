@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout9"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.AdicionarProdutoFragment">
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="@string/txtAdicionarProduto"
+                android:textColor="@color/colorBlack"
+                android:gravity="center"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/txtNomeProduto"
+                android:textColor="@color/colorBlack"
+                android:layout_marginTop="30dp"
+                android:textSize="15sp" />
+
+            <EditText
+                android:id="@+id/editTextNomeProduto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:contentDescription="Inserir nome do produto aqui"
+                android:layout_marginTop="10dp"
+                android:hint="@string/txtNomeProduto"
+                android:textSize="15sp"
+                android:inputType="textPersonName" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/txtPreco"
+                android:textColor="@color/colorBlack"
+                android:layout_marginTop="10dp"
+                android:textSize="15sp" />
+
+            <EditText
+                android:id="@+id/editTextPrecoProduto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:contentDescription="Insira o valor do produto"
+                android:hint="@string/txtPreco"
+                android:inputType="textPersonName" />
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/txtComercio"
+                android:textSize="15sp"
+                android:textColor="@color/colorBlack" />
+
+            <EditText
+                android:id="@+id/editTextTipoComercio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:contentDescription="Insira o tipo de comercio: Mercado, farmacia ou sacolao"
+                android:ems="10"
+                android:hint="@string/txtTipoComercio"
+                android:inputType="textPersonName" />
+
+            <Button
+                android:id="@+id/btnCadastrar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:contentDescription="Botão para cadastrar"
+                android:text="@string/btnCadastrar"
+                android:layout_marginTop="20dp"
+                android:textSize="15sp" />
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

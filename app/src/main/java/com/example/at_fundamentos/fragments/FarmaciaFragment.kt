@@ -15,6 +15,7 @@ import com.example.at_fundamentos.ViewModel.ComercioViewModel
 import kotlinx.android.synthetic.main.fragment_farmacia.*
 
 class FarmaciaFragment : Fragment() {
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -46,8 +47,8 @@ class FarmaciaFragment : Fragment() {
 
             override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
 
-                comercioViewModel!!.todosOsProdutos.value!!.add(comercioViewModel!!
-                    .produtosFarmacia[viewHolder.adapterPosition])
+                comercioViewModel!!.todosOsProdutos.value!!
+                    .add((comercioViewModel!!.produtosFarmacia[viewHolder.adapterPosition]))
             }
         })
         itemTouchHelper.attachToRecyclerView(rcyVwFarmacia)

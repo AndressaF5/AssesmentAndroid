@@ -21,7 +21,6 @@ class MainActivity : AppCompatActivity() {
 
         bottomNavigationComercio.setupWithNavController(findNavController(R.id.fragment))
 
-
         var comercioViewModel = ViewModelProviders.of(this).get(ComercioViewModel::class.java)
     }
 }
