@@ -33,7 +33,7 @@ class TotalComprasFragment : Fragment() {
                 total += it.precoProduto.toDouble()
             }
             comercioViewModel.totalCompras = total
-            txtVwTotalCompras.text = "Total da compra = " + comercioViewModel.totalCompras.toString()
+            txtVwTotalCompras.text = "Total da compra = " + comercioViewModel.totalCompras
         })
     }
 }

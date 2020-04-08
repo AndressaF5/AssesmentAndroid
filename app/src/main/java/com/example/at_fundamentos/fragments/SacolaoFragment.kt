@@ -49,9 +49,8 @@ class SacolaoFragment : Fragment() {
 
             override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
 
-                var todosOsProdutos = comercioViewModel!!.todosOsProdutos.value
-                todosOsProdutos!!.add(comercioViewModel!!.produtosSacolao[viewHolder.adapterPosition])
-                comercioViewModel!!.totalCompras = comercioViewModel!!.totalCompras + comercioViewModel!!.produtosSacolao[viewHolder.adapterPosition].precoProduto.toDouble()
+                comercioViewModel!!.todosOsProdutos.value!!.add(comercioViewModel!!
+                    .produtosSacolao[viewHolder.adapterPosition])
             }
         })
         itemTouchHelper.attachToRecyclerView(rcyVwSacolao)
