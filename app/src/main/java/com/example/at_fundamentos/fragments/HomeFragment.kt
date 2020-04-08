@@ -23,13 +23,13 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        /*buttonReceitas.setOnClickListener{
+        buttonReceitas.setOnClickListener{
             val url: String = "https://m.tudogostoso.com.br"
             val webPage: Uri = Uri.parse(url)
             val intent = Intent(Intent.ACTION_VIEW, webPage)
             if(intent.resolveActivity(activity!!.packageManager) != null){
                 startActivity(intent)
             }
-        }*/
+        }
     }
 }
