@@ -1,147 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout9"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".fragments.AdicionarProdutoFragment">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:fillViewport="true">
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_begin="20dp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_end="20dp" />
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:text="@string/txtAdicionarProduto"
+                android:textColor="@color/colorBlack"
+                android:gravity="center"
+                android:textSize="20sp" />
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
-            android:text="@string/txtAdicionarProduto"
-            android:textColor="@color/colorBlack"
-            android:textSize="20sp"
-            app:layout_constraintEnd_toStartOf="@+id/guideline2"
-            app:layout_constraintStart_toStartOf="@+id/guideline"
-            app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/txtNomeProduto"
+                android:textColor="@color/colorBlack"
+                android:layout_marginTop="30dp"
+                android:textSize="15sp" />
 
+            <EditText
+                android:id="@+id/editTextNomeProduto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:contentDescription="Inserir nome do produto aqui"
+                android:layout_marginTop="10dp"
+                android:hint="@string/txtNomeProduto"
+                android:textSize="15sp"
+                android:inputType="textPersonName" />
 
-        <EditText
-            android:id="@+id/editTextNomeProduto"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="70dp"
-            android:contentDescription="Inserir nome do produto aqui"
-            android:ems="10"
-            android:hint="@string/txtNomeProduto"
-            android:inputType="textPersonName"
-            app:layout_constraintEnd_toStartOf="@+id/guideline2"
-            app:layout_constraintStart_toStartOf="@+id/guideline"
-            app:layout_constraintTop_toBottomOf="@+id/textView" />
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/txtPreco"
+                android:textColor="@color/colorBlack"
+                android:layout_marginTop="20dp"
+                android:textSize="15sp" />
 
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/txtNomeProduto"
-            android:textColor="@color/colorBlack"
-            android:textSize="15sp"
-            app:layout_constraintBottom_toTopOf="@+id/editTextNomeProduto"
-            app:layout_constraintEnd_toStartOf="@+id/guideline2"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/guideline"
-            app:layout_constraintTop_toBottomOf="@+id/textView"
-            app:layout_constraintVertical_bias="0.98" />
+            <EditText
+                android:id="@+id/editTextPrecoProduto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:contentDescription="Insira o valor do produto"
+                android:hint="@string/txtPreco"
+                android:inputType="textPersonName" />
 
-        <EditText
-            android:id="@+id/editTextPrecoProduto"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
-            android:ems="10"
-            android:hint="@string/txtPreco"
-            android:inputType="textPersonName"
-            android:contentDescription="Insira o valor do produto"
-            app:layout_constraintEnd_toStartOf="@+id/guideline2"
-            app:layout_constraintStart_toStartOf="@+id/guideline"
-            app:layout_constraintTop_toBottomOf="@+id/editTextNomeProduto" />
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/txtComercio"
+                android:layout_marginTop="20dp"
+                android:textSize="15sp"
+                android:textColor="@color/colorBlack" />
 
-        <TextView
-            android:id="@+id/textView4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/txtPreco"
-            android:textColor="@color/colorBlack"
-            android:textSize="15sp"
-            app:layout_constraintBottom_toTopOf="@+id/editTextPrecoProduto"
-            app:layout_constraintEnd_toStartOf="@+id/guideline2"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/guideline"
-            app:layout_constraintTop_toBottomOf="@+id/editTextNomeProduto"
-            app:layout_constraintVertical_bias="0.96" />
+            <EditText
+                android:id="@+id/editTextTipoComercio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:contentDescription="Insira o tipo de comercio: Mercado, farmacia ou sacolao"
+                android:ems="10"
+                android:hint="@string/txtTipoComercio"
+                android:inputType="textPersonName" />
 
-        <EditText
-            android:id="@+id/editTextTipoComercio"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
-            android:layout_marginBottom="70dp"
-            android:ems="10"
-            android:hint="@string/txtTipoComercio"
-            android:inputType="textPersonName"
-            android:contentDescription="Insira o tipo de comercio: Mercado, farmacia ou sacolao"
-            app:layout_constraintBottom_toTopOf="@+id/btnCadastrar"
-            app:layout_constraintEnd_toStartOf="@+id/guideline2"
-            app:layout_constraintStart_toStartOf="@+id/guideline"
-            app:layout_constraintTop_toBottomOf="@+id/editTextPrecoProduto" />
+            <Button
+                android:id="@+id/btnCadastrar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:contentDescription="Botão para cadastrar"
+                android:text="@string/btnCadastrar"
+                android:layout_marginTop="30dp"
+                android:textSize="15sp" />
 
-        <TextView
-            android:id="@+id/textView5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/txtComercio"
-            android:textSize="15sp"
-            android:textColor="@color/colorBlack"
-            app:layout_constraintBottom_toTopOf="@+id/editTextTipoComercio"
-            app:layout_constraintEnd_toStartOf="@+id/guideline2"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/guideline"
-            app:layout_constraintTop_toBottomOf="@+id/editTextPrecoProduto"
-            app:layout_constraintVertical_bias="0.97" />
+        </LinearLayout>
 
-        <Button
-            android:id="@+id/btnCadastrar"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:contentDescription="Botão para cadastrar"
-            android:text="@string/btnCadastrar"
-            android:textSize="15sp"
-            app:layout_constraintBottom_toTopOf="@+id/guideline10"
-            app:layout_constraintEnd_toStartOf="@+id/guideline2"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/guideline"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.78" />
+    </androidx.core.widget.NestedScrollView>
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline10"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_begin="600dp" />
-
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-</FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

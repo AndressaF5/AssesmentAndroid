@@ -19,9 +19,9 @@
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationComercio"
-        android:layout_width="0dp"
-        android:layout_height="60dp"
         style="@style/Widget.AppCompat.Toolbar.Button.Navigation"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
         android:background="@color/colorAccent"
         app:itemTextColor="@color/colorBlack"
         app:layout_constraintBottom_toBottomOf="parent"
