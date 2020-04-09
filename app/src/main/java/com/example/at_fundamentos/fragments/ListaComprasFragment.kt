@@ -36,9 +36,7 @@ class ListaComprasFragment : Fragment() {
             comercioViewModel = ViewModelProviders.of(it).get(ComercioViewModel::class.java)
         }
 
-        var todosOsProdutos = comercioViewModel!!.todosOsProdutos.value
-
-        var listaComprasAdapter = ListaComprasAdapter(todosOsProdutos)
+        var listaComprasAdapter = ListaComprasAdapter(comercioViewModel!!.todosOsProdutos.value)
         rcyVwListaCompras.adapter = listaComprasAdapter
         rcyVwListaCompras.layoutManager = LinearLayoutManager(context)
 
@@ -54,8 +52,7 @@ class ListaComprasFragment : Fragment() {
             override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
 
                 val position = viewHolder.adapterPosition
-                comercioViewModel!!.totalCompras = comercioViewModel!!.totalCompras - todosOsProdutos!![position].precoProduto.toDouble()
-                todosOsProdutos.removeAt(position)
+                comercioViewModel!!.todosOsProdutos.value!!.removeAt(position)
                 listaComprasAdapter.notifyItemRemoved(position)
             }
         })

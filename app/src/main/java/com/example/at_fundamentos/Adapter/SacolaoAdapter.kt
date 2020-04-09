@@ -29,10 +29,6 @@ class SacolaoAdapter (
 
         val sacolaoViewHolder = SacolaoViewHolder(view)
 
-        sacolaoViewHolder.itemView.setOnClickListener{
-            val sacolao = sacoloes[sacolaoViewHolder.adapterPosition]
-        }
-
         return sacolaoViewHolder
     }
 

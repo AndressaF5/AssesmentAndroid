@@ -26,8 +26,6 @@ class ComercioFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        //var comercioViewModel = ViewModelProviders.of(this).get(ComercioViewModel::class.java)
-
         val viewPager: ViewPager = view.findViewById(R.id.view_pager)
         val tabs: TabLayout = view.findViewById(R.id.tabs)
         tabs.setupWithViewPager(viewPager)

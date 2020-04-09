@@ -29,10 +29,6 @@ class MercadoAdapter (
 
         val mercadoViewHolder = MercadoViewHolder(view)
 
-        mercadoViewHolder.itemView.setOnClickListener{
-            val mercado = comprasMercados[mercadoViewHolder.adapterPosition]
-        }
-
         return mercadoViewHolder
     }
 

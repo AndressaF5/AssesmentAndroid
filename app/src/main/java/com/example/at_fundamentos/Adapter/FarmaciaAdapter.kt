@@ -29,10 +29,6 @@ class FarmaciaAdapter(
 
         val farmaciaViewHolder = FarmaciaViewHolder(view)
 
-        farmaciaViewHolder.itemView.setOnClickListener{
-            val farmacia = farmacias[farmaciaViewHolder.adapterPosition]
-        }
-
         return farmaciaViewHolder
     }
 

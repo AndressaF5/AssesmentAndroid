@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.at_fundamentos.Adapter.MercadoAdapter
+import com.example.at_fundamentos.Model.Estabelecimento
 import com.example.at_fundamentos.R
 import com.example.at_fundamentos.ViewModel.ComercioViewModel
 import kotlinx.android.synthetic.main.fragment_mercado.*
@@ -47,8 +48,12 @@ class MercadoFragment : Fragment() {
 
             override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
 
-                comercioViewModel!!.todosOsProdutos.value!!.add(comercioViewModel!!
-                    .produtosMercado[viewHolder.adapterPosition])
+                var novaLista = comercioViewModel!!.todosOsProdutos.value!!
+                novaLista.add(Estabelecimento(nomeProduto = comercioViewModel!!.produtosMercado[viewHolder.adapterPosition].nomeProduto,
+                    precoProduto = comercioViewModel!!.produtosMercado[viewHolder.adapterPosition].precoProduto)
+                )
+
+                comercioViewModel!!.todosOsProdutos.value = novaLista
             }
         })
         itemTouchHelper.attachToRecyclerView(rcyVwMercado)
