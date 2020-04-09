@@ -1,6 +1,7 @@
 package com.example.at_fundamentos.fragments
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -15,6 +16,8 @@ import kotlinx.android.synthetic.main.fragment_total_compras.*
 
 class TotalComprasFragment : Fragment() {
 
+    lateinit var comercioViewModel: ComercioViewModel
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -26,11 +29,13 @@ class TotalComprasFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        var comercioViewModel: ComercioViewModel = ViewModelProviders.of(this).get(ComercioViewModel::class.java)
+        activity?.let {
+            comercioViewModel = ViewModelProviders.of(it).get(ComercioViewModel::class.java)
+        }
 
         comercioViewModel.todosOsProdutos.observe(viewLifecycleOwner, Observer {
+            Log.i("Observe", "TodosOsProdutos")
             var total = 0.0
-            Toast.makeText(activity?.baseContext, "Evento disparado", Toast.LENGTH_LONG).show()
             it.forEach {
                 total += it.precoProduto.toDouble()
             }
