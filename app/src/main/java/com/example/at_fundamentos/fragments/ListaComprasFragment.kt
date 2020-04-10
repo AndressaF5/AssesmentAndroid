@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
@@ -15,6 +16,7 @@ import com.example.at_fundamentos.Adapter.ListaComprasAdapter
 import com.example.at_fundamentos.R
 import com.example.at_fundamentos.ViewModel.ComercioViewModel
 import kotlinx.android.synthetic.main.fragment_lista_compras.*
+import kotlinx.android.synthetic.main.fragment_total_compras.*
 
 class ListaComprasFragment : Fragment() {
 
@@ -52,6 +54,10 @@ class ListaComprasFragment : Fragment() {
             override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
 
                 val position = viewHolder.adapterPosition
+
+                comercioViewModel!!.totalCompras.value = comercioViewModel!!.totalCompras.value!! - comercioViewModel!!
+                    .todosOsProdutos.value!![position].precoProduto.toDouble()
+
                 comercioViewModel!!.todosOsProdutos.value!!.removeAt(position)
                 listaComprasAdapter.notifyItemRemoved(position)
             }

@@ -40,5 +40,7 @@ class ComercioViewModel : ViewModel() {
         value = mutableListOf()
     }
 
-    var totalCompras: Double = 0.0
+    var totalCompras = MutableLiveData<Double>().apply {
+        value = 0.0
+    }
 }

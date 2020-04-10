@@ -1,5 +1,6 @@
 package com.example.at_fundamentos.fragments
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -15,6 +16,8 @@ import kotlinx.android.synthetic.main.fragment_total_compras.*
 
 class TotalComprasFragment : Fragment() {
 
+    var comercioViewModel: ComercioViewModel? = null
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -26,16 +29,24 @@ class TotalComprasFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        var comercioViewModel: ComercioViewModel = ViewModelProviders.of(this).get(ComercioViewModel::class.java)
+        activity?.let {
+            comercioViewModel = ViewModelProviders.of(it).get(ComercioViewModel::class.java)
+        }
 
-        comercioViewModel.todosOsProdutos.observe(viewLifecycleOwner, Observer {
+        comercioViewModel!!.todosOsProdutos.observe(viewLifecycleOwner, Observer {
             var total = 0.0
-            Toast.makeText(activity?.baseContext, "Evento disparado", Toast.LENGTH_LONG).show()
             it.forEach {
-                total += it.precoProduto.toDouble()
+                 total += it.precoProduto.toDouble()
             }
-            comercioViewModel.totalCompras = total
-            txtVwTotalCompras.text = "Total da compra = " + comercioViewModel.totalCompras
+            comercioViewModel!!.totalCompras.value = total
+        })
+
+        comercioViewModel!!.totalCompras.observe(viewLifecycleOwner, Observer {
+            if(it == 0.0){
+                txtVwTotalCompras.setText("Total da compra = " + 0.0)
+            }else{
+                txtVwTotalCompras.setText("Total da compra = " + comercioViewModel!!.totalCompras.value)
+            }
         })
     }
 }

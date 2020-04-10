@@ -48,9 +48,11 @@ class MercadoFragment : Fragment() {
 
             override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
 
-                var novaLista = comercioViewModel!!.todosOsProdutos.value!!
-                novaLista.add(Estabelecimento(nomeProduto = comercioViewModel!!.produtosMercado[viewHolder.adapterPosition].nomeProduto,
-                    precoProduto = comercioViewModel!!.produtosMercado[viewHolder.adapterPosition].precoProduto)
+                var novaLista = comercioViewModel!!.todosOsProdutos.value
+                novaLista?.add(
+                    Estabelecimento(
+                        comercioViewModel!!.produtosMercado[viewHolder.adapterPosition].nomeProduto,
+                        comercioViewModel!!.produtosMercado[viewHolder.adapterPosition].precoProduto)
                 )
 
                 comercioViewModel!!.todosOsProdutos.value = novaLista

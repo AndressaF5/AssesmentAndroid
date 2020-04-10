@@ -5,12 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.lifecycle.ViewModelProviders
 import androidx.viewpager.widget.ViewPager
 import com.example.at_fundamentos.Adapter.DeslizePagerAdapter
-
 import com.example.at_fundamentos.R
-import com.example.at_fundamentos.ViewModel.ComercioViewModel
 import com.google.android.material.tabs.TabLayout
 
 class ComercioFragment : Fragment() {
@@ -31,5 +28,4 @@ class ComercioFragment : Fragment() {
         tabs.setupWithViewPager(viewPager)
         viewPager.adapter = DeslizePagerAdapter(childFragmentManager)
     }
-
 }

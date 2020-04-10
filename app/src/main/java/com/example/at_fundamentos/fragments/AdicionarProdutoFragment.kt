@@ -6,22 +6,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModelProviders
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.at_fundamentos.Adapter.FarmaciaAdapter
 import com.example.at_fundamentos.Adapter.MercadoAdapter
 import com.example.at_fundamentos.Adapter.SacolaoAdapter
 import com.example.at_fundamentos.Model.Farmacia
 import com.example.at_fundamentos.Model.Mercado
 import com.example.at_fundamentos.Model.Sacolao
-
 import com.example.at_fundamentos.R
 import com.example.at_fundamentos.ViewModel.ComercioViewModel
 import kotlinx.android.synthetic.main.fragment_adicionar_produto.*
-import kotlinx.android.synthetic.main.fragment_farmacia.*
-import kotlinx.android.synthetic.main.fragment_mercado.*
-import kotlinx.android.synthetic.main.fragment_sacolao.*
 
 class AdicionarProdutoFragment : Fragment() {
 
