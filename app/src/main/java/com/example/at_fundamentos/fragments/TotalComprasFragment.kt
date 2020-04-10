@@ -43,11 +43,7 @@ class TotalComprasFragment : Fragment() {
         })
 
         comercioViewModel!!.totalCompras.observe(viewLifecycleOwner, Observer {
-            if(it == 0.0){
-                txtVwTotalCompras.setText("Total da compra = " + 0.0)
-            }else{
-                txtVwTotalCompras.setText("Total da compra = " + comercioViewModel!!.totalCompras.value)
-            }
+            txtVwTotalCompras.text = String.format("Total da compra = %.2f", comercioViewModel!!.totalCompras.value)
         })
     }
 }
