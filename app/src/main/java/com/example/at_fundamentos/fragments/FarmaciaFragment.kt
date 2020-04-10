@@ -48,12 +48,12 @@ class FarmaciaFragment : Fragment() {
 
             override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
 
-                var novaLista = comercioViewModel!!.todosOsProdutos.value!!
-                novaLista.add(
+                var novaLista = comercioViewModel!!.todosOsProdutos.value
+                novaLista?.add(
                     Estabelecimento(
                         comercioViewModel!!.produtosFarmacia[viewHolder.adapterPosition].nomeProduto,
-                        comercioViewModel!!.produtosFarmacia[viewHolder.adapterPosition].precoProduto))
-
+                        comercioViewModel!!.produtosFarmacia[viewHolder.adapterPosition].precoProduto)
+                )
                 comercioViewModel!!.todosOsProdutos.value = novaLista
             }
         })

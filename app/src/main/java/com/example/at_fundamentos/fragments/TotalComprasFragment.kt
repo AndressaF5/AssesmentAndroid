@@ -2,6 +2,7 @@ package com.example.at_fundamentos.fragments
 
 import android.annotation.SuppressLint
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -16,7 +17,7 @@ import kotlinx.android.synthetic.main.fragment_total_compras.*
 
 class TotalComprasFragment : Fragment() {
 
-    var comercioViewModel: ComercioViewModel? = null
+    private var comercioViewModel: ComercioViewModel? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -34,11 +35,11 @@ class TotalComprasFragment : Fragment() {
         }
 
         comercioViewModel!!.todosOsProdutos.observe(viewLifecycleOwner, Observer {
-            var total = 0.0
+            var valorTotal = 0.0
             it.forEach {
-                 total += it.precoProduto.toDouble()
+                valorTotal += it.precoProduto.toDouble()
             }
-            comercioViewModel!!.totalCompras.value = total
+            comercioViewModel!!.totalCompras.value = valorTotal
         })
 
         comercioViewModel!!.totalCompras.observe(viewLifecycleOwner, Observer {
