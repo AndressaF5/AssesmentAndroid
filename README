@@ -1,0 +1,12 @@
+Nesse projeto desenvolvi um simples aplicativo de lista de compras para um trabalho de final de trimestre
+
+Existem 3 comércios para a escolha dos produtos: mercado, farmácia e sacolão, onde temos o nome e o preço do produto
+
+Nesse projeto ainda não foi implementado um banco de dados, mas pretendo implementar
+
+Cada comércio foi inicializado com uma lista
+
+Na lista de compras quando um item é adicionado, automaticamente o preço do produto é adicionado no preço total da lista de compras,
+o mesmo acontece quando um produto é retirado da lista, o valor é subtraído do valor total da lista de compras
+
+A interface não foi muito trabalhada ainda, é mais uma coisa a se fazer nesse projeto
